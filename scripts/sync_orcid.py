@@ -156,14 +156,17 @@ def contributors(work: dict[str, Any]) -> list[str]:
             names.append(name)
     return names
 
-
 def resolve_url(work: dict[str, Any], identifiers: dict[str, str]) -> str | None:
-    direct_url = safe_value(work.get("url"))
-    if direct_url:
-        return direct_url
     doi = identifiers.get("doi")
+
     if doi:
         return f"https://doi.org/{doi}"
+
+    direct_url = safe_value(work.get("url"))
+
+    if direct_url:
+        return direct_url
+
     return None
 
 
