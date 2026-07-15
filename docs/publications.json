@@ -1,7 +1,1139 @@
 {
   "orcid_id": "0000-0002-8255-9494",
   "owner_name": "Vinícius de Paula",
-  "last_updated_utc": null,
-  "total": 0,
-  "works": []
+  "last_updated_utc": "2026-07-15T08:59:27.285554+00:00",
+  "total": 49,
+  "works": [
+    {
+      "id": "orcid:216388898",
+      "orcid_put_code": 216388898,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Renewable Eutectic Solvent-based Catalytic Systems for the Chemical Recycling of PET and PEF",
+      "year": 2026,
+      "month": 9,
+      "day": 7,
+      "venue": "1st International Online Conference on Recycling",
+      "authors": [
+        "Vinícius de Paula",
+        "Simão V. Pandeirada",
+        "Paulo J. A. Ribeiro-Claro",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:219801399",
+      "orcid_put_code": 219801399,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Reprogramming poly(ethylene terephthalate) for circularity: green ring-opening polymerization and cyclodepolymerization of PET/PEF copolyesters",
+      "year": 2026,
+      "month": 7,
+      "day": 16,
+      "venue": "Research Summit 2026",
+      "authors": [
+        "Feriel Abid",
+        "Flavie Reymond",
+        "Vinícius de Paula",
+        "Catarina F. Araújo",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:219801129",
+      "orcid_put_code": 219801129,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Chasing the SAN: dissolution-based recycling of ABS polymers",
+      "year": 2026,
+      "month": 7,
+      "day": 16,
+      "venue": "Research Summit 2026",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Catarina F. Araújo",
+        "Paulo J. A. Ribeiro-Claro",
+        "Nathanaël Guigo",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:214617128",
+      "orcid_put_code": 214617128,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Renewable Solvents for ABS Recycling: Bridging Molecular Screening, Process Optimisation and Mechanistic Insight",
+      "year": 2026,
+      "month": 6,
+      "day": 20,
+      "venue": "62nd Nordic Polymer Days",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Catarina F. Araújo",
+        "Filipe H. B. Sosa",
+        "Paulo J. A. Ribeiro-Claro",
+        "João A. P. Coutinho",
+        "Nathanaël Guigo",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:212660736",
+      "orcid_put_code": 212660736,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Process Optimization and Spectroscopic Validation for the Selective Recycling of ABS into High-Purity SAN",
+      "year": 2026,
+      "month": 5,
+      "day": 20,
+      "venue": "62nd Nordic Polymer Days",
+      "authors": [
+        "Vinícius de Paula",
+        "Catarina F. Araújo",
+        "Paula S. S. Lacerda",
+        "Leonor Marques",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "10.1016/j.scp.2026.102334",
+      "orcid_put_code": 203607653,
+      "type": "journal-article",
+      "category": "articles",
+      "title": "Breaking the cycle: A novel eco-friendly strategy for poly(hexamethylene 2,5-furandicarboxylate) synthesis and recycling",
+      "year": 2026,
+      "month": 4,
+      "day": null,
+      "venue": "Sustainable Chemistry and Pharmacy",
+      "authors": [
+        "Feriel Abid",
+        "Paula S.S. Lacerda",
+        "Vinícius de Paula",
+        "Catarina F. Araújo",
+        "Fabio Aricò",
+        "Armando J.D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": "10.1016/j.scp.2026.102334",
+      "url": "http://dx.doi.org/10.1016/j.scp.2026.102334",
+      "citation": "@article {\n\tauthor = {Feriel Abid and Paula S.S. Lacerda and Vinícius de Paula and Catarina F. Araújo and Fabio Aricò and Armando J.D. Silvestre and Andreia F. Sousa},\n\ttitle = {Breaking the cycle: A novel eco-friendly strategy for poly(hexamethylene 2,5-furandicarboxylate) synthesis and recycling},\n\tjournal = {Sustainable Chemistry and Pharmacy},\n\tyear = {2026},\n\tmonth = {apr},\n\turl = {http://dx.doi.org/10.1016/j.scp.2026.102334},\n\tdoi = {10.1016/j.scp.2026.102334}\n}",
+      "external_ids": {
+        "source-work-id": "cv-prod-id-4925952",
+        "issn": "2352-5541",
+        "doi": "10.1016/j.scp.2026.102334"
+      }
+    },
+    {
+      "id": "10.24927/rce2026.004",
+      "orcid_put_code": 211833977,
+      "type": "journal-article",
+      "category": "articles",
+      "title": "O conceito de massa molecular e as propriedades dos polímeros",
+      "year": 2026,
+      "month": 3,
+      "day": 30,
+      "venue": "Revista de Ciência Elementar",
+      "authors": [
+        "Paula, Vinícius",
+        "Corresponding author: Paula, Vinícius."
+      ],
+      "doi": "10.24927/rce2026.004",
+      "url": "https://doi.org/10.24927/rce2026.004",
+      "citation": "@article {\n\tauthor = {Paula, Vinícius and Corresponding author: Paula, Vinícius.},\n\ttitle = {O conceito de massa molecular e as propriedades dos polímeros},\n\tjournal = {Revista de Ciência Elementar},\n\tvolume = {14},\n\tnumber = {1},\n\tyear = {2026},\n\tmonth = {mar},\n\turl = {https://doi.org/10.24927/rce2026.004},\n\tdoi = {10.24927/rce2026.004}\n}",
+      "external_ids": {
+        "source-work-id": "cv-prod-id-5275261",
+        "issn": "2183-1270",
+        "doi": "10.24927/rce2026.004"
+      }
+    },
+    {
+      "id": "orcid:212220669",
+      "orcid_put_code": 212220669,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Closing the loop on engineering plastics: solvent-mediated recovery of SAN from complex waste",
+      "year": 2026,
+      "month": 3,
+      "day": 3,
+      "venue": "4th RSC Poster",
+      "authors": [
+        "Vinícius de Paula",
+        "Catarina F. Araújo",
+        "Paula S. S. Lacerda",
+        "Leonor Marques",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "10.1515/ci-2026-0203",
+      "orcid_put_code": 214424741,
+      "type": "journal-article",
+      "category": "articles",
+      "title": "From Venice to the World: Inspiring the Next Generation of Green Chemists",
+      "year": 2026,
+      "month": null,
+      "day": null,
+      "venue": "Chemistry International",
+      "authors": [
+        "Beatriz Chícharo",
+        "Vinícius de Paula",
+        "Bryle Matthew F. Bacatan",
+        "Joy Salome Dotse",
+        "Maria-Iuliana Chirica"
+      ],
+      "doi": "10.1515/ci-2026-0203",
+      "url": "https://publons.com/wos-op/publon/83934620/",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.1515/ci-2026-0203"
+      }
+    },
+    {
+      "id": "10.3390/molecules31010077",
+      "orcid_put_code": 202931890,
+      "type": "journal-article",
+      "category": "articles",
+      "title": "The Evaluation of Eutectic Solvents as Catalysts for Mediating the Greener Synthesis of Poly(alkylene 2,5-furandicarboxylate)s",
+      "year": 2025,
+      "month": 12,
+      "day": 24,
+      "venue": "Molecules",
+      "authors": [
+        "Agostinho, Beatriz",
+        "de Paula, Vinícius",
+        "Silvestre, Armando J. D.",
+        "Sousa, Andreia F.",
+        "Autor correspondente: Sousa, Andreia F.."
+      ],
+      "doi": "10.3390/molecules31010077",
+      "url": "https://doi.org/10.3390/molecules31010077",
+      "citation": "@article {\n\tauthor = {Agostinho, Beatriz and de Paula, Vinícius and Silvestre, Armando J. D. and Sousa, Andreia F. and Autor correspondente: Sousa, Andreia F..},\n\ttitle = {The Evaluation of Eutectic Solvents as Catalysts for Mediating the Greener Synthesis of Poly(alkylene 2,5-furandicarboxylate)s},\n\tjournal = {Molecules},\n\tvolume = {31},\n\tnumber = {1},\n\tpages = {77},\n\tyear = {2025},\n\tmonth = {dec},\n\turl = {https://doi.org/10.3390/molecules31010077},\n\tdoi = {10.3390/molecules31010077}\n}",
+      "external_ids": {
+        "source-work-id": "cv-prod-id-4885944",
+        "issn": "1420-3049",
+        "doi": "10.3390/molecules31010077"
+      }
+    },
+    {
+      "id": "orcid:187349546",
+      "orcid_put_code": 187349546,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Selective ABS dissolution with eutectic solvents: toward greener recycling",
+      "year": 2025,
+      "month": 11,
+      "day": 19,
+      "venue": "3rd International Online Conference on Polymer Science",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Lorenzo Ceparano",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "10.3390/proceedings2026136027",
+      "orcid_put_code": 214293745,
+      "type": "conference-paper",
+      "category": "conference-abstracts",
+      "title": "Selective ABS Dissolution with Eutectic Solvents: Toward Greener Recycling",
+      "year": 2025,
+      "month": 11,
+      "day": 19,
+      "venue": "3rd International Online Conference on Polymer Science",
+      "authors": [
+        "de Paula, Vinícius",
+        "Lacerda, Paula S. S.",
+        "Ceparano, Lorenzo",
+        "Sosa, Filipe H. B.",
+        "Ferreira, Ana M.",
+        "Sousa, Andreia F."
+      ],
+      "doi": "10.3390/proceedings2026136027",
+      "url": "https://doi.org/10.3390/proceedings2026136027",
+      "citation": "@inproceedings {\n\tauthor = {de Paula, Vinícius and Lacerda, Paula S. S. and Ceparano, Lorenzo and Sosa, Filipe H. B. and Ferreira, Ana M. and Sousa, Andreia F.},\n\ttitle = {Selective ABS Dissolution with Eutectic Solvents: Toward Greener Recycling},\n\tyear = {2025},\n\tmonth = {nov},\n\tbooktitle = {IOCPS 2025},\n\tpages = {27},\n\tpublisher = {MDPI},\n\tdoi = {10.3390/proceedings2026136027}\n}",
+      "external_ids": {
+        "source-work-id": "cv-prod-id-5016887",
+        "doi": "10.3390/proceedings2026136027"
+      }
+    },
+    {
+      "id": "orcid:194197139",
+      "orcid_put_code": 194197139,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Material Recovery of Styrene–Acrylonitrile from  Complex ABS Waste",
+      "year": 2025,
+      "month": 10,
+      "day": 9,
+      "venue": "Jornadas do CICECO 2025",
+      "authors": [
+        "Vinícius de Paula",
+        "Catarina F. Araújo",
+        "Paula S. S. Lacerda",
+        "Leonor Marques",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "10.48528/6spv-r402",
+      "orcid_put_code": 187349494,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Biobased solvent systems for efficient recycling of ABS via targeted SAN dissolution",
+      "year": 2025,
+      "month": 7,
+      "day": 17,
+      "venue": "Research Summit 2025",
+      "authors": [
+        "Paula S. S. Lacerda",
+        "Lorenzo Ceparano",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": "10.48528/6spv-r402",
+      "url": "https://doi.org/10.48528/6spv-r402",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.48528/6spv-r402",
+        "isbn": "978-989-9253-31-5"
+      }
+    },
+    {
+      "id": "orcid:206065836",
+      "orcid_put_code": 206065836,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Mild-condition dissolution-based recycling of ABS with renewable solvents",
+      "year": 2025,
+      "month": 7,
+      "day": 10,
+      "venue": "XVII International Postgraduate Summer School on Green Chemistry",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:183944337",
+      "orcid_put_code": 183944337,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Mild-condition dissolution-based recycling of ABS with renewable solvents",
+      "year": 2025,
+      "month": 7,
+      "day": 9,
+      "venue": "XVII International Postgraduate Summer School on Green Chemistry",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:177320316",
+      "orcid_put_code": 177320316,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Renewable Solvents for the Physical Recycling of ABS: Advancing Plastic Circularity Under Mild Conditions",
+      "year": 2025,
+      "month": 6,
+      "day": 23,
+      "venue": "EPF - European Polymer Congress",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Lorenzo Ceparano",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:180929378",
+      "orcid_put_code": 180929378,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Advancing Sustainable Polymer Recycling: Innovations in complex Polymers recycling using innovative solvents",
+      "year": 2025,
+      "month": 6,
+      "day": 23,
+      "venue": "EPF - European Polymer Congress",
+      "authors": [
+        "Beatriz Agostinho",
+        "Simão V. Pandeirada",
+        "Vinícius de Paula",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:180929566",
+      "orcid_put_code": 180929566,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Greener solvent-driven strategies for closed-loop recycling of complex polymers",
+      "year": 2025,
+      "month": 6,
+      "day": 18,
+      "venue": "9th Milan Polymer Days",
+      "authors": [
+        "Andreia F. Sousa",
+        "Beatriz Agostinho",
+        "Simão V. Pandeirada",
+        "Vinícius de Paula",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "10.1021/acssuschemeng.4c09545",
+      "orcid_put_code": 178658110,
+      "type": "journal-article",
+      "category": "articles",
+      "title": "Closing the Loop: Greener and Efficient Hydrolytic Depolymerization for the Recycling of Polyesters Using Biobased Eutectic Solvents",
+      "year": 2025,
+      "month": 3,
+      "day": 10,
+      "venue": "ACS Sustainable Chemistry & Engineering",
+      "authors": [
+        "Vinícius de Paula",
+        "Simão V. Pandeirada",
+        "Paulo J. A. Ribeiro-Claro",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": "10.1021/acssuschemeng.4c09545",
+      "url": "https://doi.org/10.1021/acssuschemeng.4c09545",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.1021/acssuschemeng.4c09545"
+      }
+    },
+    {
+      "id": "orcid:176362881",
+      "orcid_put_code": 176362881,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Physical Recycling of ABS With Biobased Solvents: A Path To Sustainable Waste Management",
+      "year": 2025,
+      "month": 3,
+      "day": 4,
+      "venue": "3rd RSC Poster",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Lorenzo Ceparano",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:176200020",
+      "orcid_put_code": 176200020,
+      "type": "public-speech",
+      "category": "dissemination",
+      "title": "Dissolution-based recycling of ABS with safe-by-design solvents: a journey from waste to value",
+      "year": 2025,
+      "month": 2,
+      "day": 6,
+      "venue": "Greener Polymers Recycling Workshop",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Lorenzo Ceparano",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:177319992",
+      "orcid_put_code": 177319992,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Recycling of poly(ethylene terephthalate) waste by efficient hydrolytic depolymerization with bio-based eutectic solvents",
+      "year": 2025,
+      "month": 2,
+      "day": 3,
+      "venue": "DAEMON General Meeting",
+      "authors": [
+        "Vinícius de Paula",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:166654317",
+      "orcid_put_code": 166654317,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Dissolution-based recycling of ABS with safe-by-design solvents: a journey from waste to value",
+      "year": 2024,
+      "month": 10,
+      "day": 10,
+      "venue": "Jornadas CICECO 2024",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Lorenzo Ceparano",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:166654252",
+      "orcid_put_code": 166654252,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Development of nanostructured systems derived from 2,5-furandicarboxylic acid-based polyesters",
+      "year": 2024,
+      "month": 10,
+      "day": 10,
+      "venue": "Jornadas CICECO 2024",
+      "authors": [
+        "Lorenzo Ceparano",
+        "Luísa Figueiredo",
+        "Beatriz Agostinho",
+        "Vinícius de Paula",
+        "Sónia A. O. Santos",
+        "Ricardo J. B. Pinto",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:156114375",
+      "orcid_put_code": 156114375,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Physical Recycling of ABS using biobased solvents: a voyage from plastic waste to added value",
+      "year": 2024,
+      "month": 7,
+      "day": 29,
+      "venue": "Gordon Research Conference: Green and Sustainable Chemistry as a Tool to Address Climate Change and Biodiversity Loss",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:156114326",
+      "orcid_put_code": 156114326,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Physical Recycling of ABS using biobased solvents: a voyage from plastic waste to added value",
+      "year": 2024,
+      "month": 7,
+      "day": 27,
+      "venue": "Gordon Research Seminar: Sustainable Chemistry Solutions for a Net Zero Society",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:166810686",
+      "orcid_put_code": 166810686,
+      "type": "public-speech",
+      "category": "dissemination",
+      "title": "Greener and efficient hydrolytic depolymerization for the recycling of polyesters using bio-based eutectic solvents",
+      "year": 2024,
+      "month": 7,
+      "day": 25,
+      "venue": "Biobased Polymers for Sustainability Workshop",
+      "authors": [
+        "Vinícius de Paula"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:156114260",
+      "orcid_put_code": 156114260,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Physical Recycling of ABS: Leveraging Renewable Solvents for Circular Economy Solutions",
+      "year": 2024,
+      "month": 7,
+      "day": 24,
+      "venue": "Biopol 2024",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:156114221",
+      "orcid_put_code": 156114221,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Forging sustainable pathways: advancing chemical recycling techniques to address poly(ethylene 2,5-furandicarboxylate) circularity",
+      "year": 2024,
+      "month": 7,
+      "day": 23,
+      "venue": "Biopol 2024",
+      "authors": [
+        "Vinícius de Paula",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "10.48528/5rnm-k519",
+      "orcid_put_code": 178982219,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Development of biobased polyesters derived from 2,5-furandicarboxylic acid  and their sustainable nanostructures",
+      "year": 2024,
+      "month": 7,
+      "day": 19,
+      "venue": "Research Summit 2024",
+      "authors": [
+        "Luísa Figueiredo",
+        "Lorenzo Ceparano",
+        "Beatriz Agostinho",
+        "Vinícius de Paula",
+        "Sónia A. O. Santos",
+        "Ricardo J. B. Pinto",
+        "Andreia F. Sousa"
+      ],
+      "doi": "10.48528/5rnm-k519",
+      "url": "https://doi.org/10.48528/5rnm-k519",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.48528/5rnm-k519"
+      }
+    },
+    {
+      "id": "10.48528/m4m7-bp37",
+      "orcid_put_code": 162881359,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Development of biobased polyesters derived from 2,5-furandicarboxylic acid and their sustainable nanostructures",
+      "year": 2024,
+      "month": 7,
+      "day": 10,
+      "venue": "6th International Conference on Nanomaterials Science and Mechanical Engineering",
+      "authors": [
+        "Lorenzo Ceparano",
+        "Luísa Figueiredo",
+        "Beatriz Agostinho",
+        "Vinícius de Paula",
+        "Sónia A. O. Santos",
+        "Ricardo J. B. Pinto",
+        "Andreia F. Sousa"
+      ],
+      "doi": "10.48528/m4m7-bp37",
+      "url": "https://doi.org/10.48528/m4m7-bp37",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.48528/m4m7-bp37"
+      }
+    },
+    {
+      "id": "10.5281/zenodo.11203822",
+      "orcid_put_code": 156113955,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Hydrolytic depolymerization of polyester waste: a case study on poly(ethylene 2,5-furandicarboxylate)",
+      "year": 2024,
+      "month": 4,
+      "day": 4,
+      "venue": "FUR4Sustain WG/CG/MC Nice Meeting Conference",
+      "authors": [
+        "Vinícius de Paula",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": "10.5281/zenodo.11203822",
+      "url": "https://doi.org/10.5281/zenodo.11203822",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.5281/zenodo.11203822"
+      }
+    },
+    {
+      "id": "orcid:156113995",
+      "orcid_put_code": 156113995,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Hydrolytic depolymerization of polyester waste: a case study on poly(ethylene 2,5-furandicarboxylate)",
+      "year": 2024,
+      "month": 4,
+      "day": 4,
+      "venue": "FUR4Sustain WG/CG/MC Nice Meeting Conference",
+      "authors": [
+        "Vinícius de Paula",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {}
+    },
+    {
+      "id": "10.5281/zenodo.11203686",
+      "orcid_put_code": 156114145,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Development of poly(ethylene 2,5-furanodicarboxylate) sustainable nanostructures",
+      "year": 2024,
+      "month": 4,
+      "day": 4,
+      "venue": "FUR4Sustain WG/CG/MC Nice Meeting Conference",
+      "authors": [
+        "Luísa Figueiredo",
+        "Beatriz Agostinho",
+        "Vinícius de Paula",
+        "Sónia A. O. Santos",
+        "Ricardo J. B. Pinto",
+        "Andreia F. Sousa"
+      ],
+      "doi": "10.5281/zenodo.11203686",
+      "url": "https://doi.org/10.5281/zenodo.11203686",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.5281/zenodo.11203686"
+      }
+    },
+    {
+      "id": "orcid:156113909",
+      "orcid_put_code": 156113909,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Recycling of polyester waste via hydrolytic depolymerization with terpenoid-based eutectic solvents",
+      "year": 2024,
+      "month": 3,
+      "day": 5,
+      "venue": "2nd RSC Poster",
+      "authors": [
+        "Vinícius de Paula",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": "V. de Paula, A. J. D. Silvestre, and A. F. Sousa, “Recycling of polyester waste via hydrolytic depolymerization with terpenoid-based eutectic solvents”, in 2nd RSC Poster, (March 5), Online, 2024.",
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:143741108",
+      "orcid_put_code": 143741108,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Towards Greener Recycling of Polyesters Using Bio-based Eutectic Solvents",
+      "year": 2023,
+      "month": 10,
+      "day": 12,
+      "venue": "Jornadas CICECO",
+      "authors": [
+        "Vinícius de Paula",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": "V. de Paula, A. J. D. Silvestre, and A. F. Sousa, “Towards Greener Recycling of Polyesters Using Bio-based Eutectic Solvents”, in Jornadas CICECO, (October 12), Aveiro, 2023.",
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:139841248",
+      "orcid_put_code": 139841248,
+      "type": "public-speech",
+      "category": "dissemination",
+      "title": "Greener recycling of polyesters through hydrolytic depolymerization: Unveiling the potential of terpenoid-based eutectic solvents",
+      "year": 2023,
+      "month": 10,
+      "day": null,
+      "venue": "2nd FUR4Sustain Happy Young Hour",
+      "authors": [
+        "Vinícius de Paula",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": "V. de Paula, A. J. D. Silvestre, and A. F. Sousa, “Greener recycling of polyesters through hydrolytic depolymerization: Unveiling the potential of terpenoid-based eutectic solvents”, in FUR4Sustain Young Happy Hour, (October 13), Online, 2023.",
+      "external_ids": {}
+    },
+    {
+      "id": "10.5281/zenodo.11203385",
+      "orcid_put_code": 139841141,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Recycling of poly(ethylene terephthalate) waste by efficient hydrolytic depolymerization with bio-based eutectic solvents",
+      "year": 2023,
+      "month": 9,
+      "day": null,
+      "venue": "14th International Chemical and Biological Engineering Conference",
+      "authors": [
+        "Vinícius de Paula",
+        "Vinícius de Paula",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": "10.5281/zenodo.11203385",
+      "url": "https://doi.org/10.5281/zenodo.11203385",
+      "citation": "V. de Paula, A. J. D. Silvestre, and A. F. Sousa, “Recycling of poly(ethylene terephthalate) waste by efficient hydrolytic depolymerization with bio-based eutectic solvents.,” in International Chemical and Biological Engineering Conference, (September 12–15), Bragança, Portugal, 2023.",
+      "external_ids": {
+        "isbn": "978-972-745-327-6",
+        "doi": "10.5281/zenodo.11203385"
+      }
+    },
+    {
+      "id": "10.3791/65452",
+      "orcid_put_code": 139886711,
+      "type": "journal-article",
+      "category": "articles",
+      "title": "Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors",
+      "year": 2023,
+      "month": 7,
+      "day": 28,
+      "venue": "Journal of Visualized Experiments",
+      "authors": [
+        "José J. M. Vitória",
+        "Paula, Vinícius",
+        "Odete A. B. da Cruz e Silva",
+        "Diogo Trigo",
+        "Autor correspondente: Diogo Trigo."
+      ],
+      "doi": "10.3791/65452",
+      "url": "http://dx.doi.org/10.3791/65452",
+      "citation": "@article {\n\tauthor = {José J. M. Vitória and Paula, Vinícius and Odete A. B. da Cruz e Silva and Diogo Trigo and Autor correspondente: Diogo Trigo.},\n\ttitle = {Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors},\n\tjournal = {Journal of Visualized Experiments},\n\tnumber = {197},\n\tyear = {2023},\n\tmonth = {jul},\n\turl = {http://dx.doi.org/10.3791/65452},\n\tdoi = {10.3791/65452}\n}",
+      "external_ids": {
+        "source-work-id": "cv-prod-id-3480232",
+        "doi": "10.3791/65452",
+        "eid": "2-s2.0-85166566795",
+        "wosuid": "WOS:001061584300009",
+        "issn": "1940-087X"
+      }
+    },
+    {
+      "id": "10.3791/65452-v",
+      "orcid_put_code": 177320116,
+      "type": "public-speech",
+      "category": "dissemination",
+      "title": "Author Spotlight: An Optimized Automated Method for Investigating Retinoic Acid Receptors in Neuronal Mitochondria",
+      "year": 2023,
+      "month": 7,
+      "day": 28,
+      "venue": "Journal of Visualized Experiments",
+      "authors": [
+        "José J. M. Vitória",
+        "Vinícius de Paula",
+        "Odete A. B. da Cruz e Silva",
+        "Diogo Trigo"
+      ],
+      "doi": "10.3791/65452-v",
+      "url": "http://dx.doi.org/10.3791/65452-v",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.3791/65452-v"
+      }
+    },
+    {
+      "id": "10.13140/rg.2.2.12420.44162",
+      "orcid_put_code": 179905000,
+      "type": "dissertation-thesis",
+      "category": "theses",
+      "title": "Recycling of polymers: a case study on poly(ethylene terephthalate) and poly(ethylene 2,5-furandicarboxylate)",
+      "year": 2023,
+      "month": 7,
+      "day": 19,
+      "venue": "Universidade de Aveiro Departamento de Química",
+      "authors": [],
+      "doi": "10.13140/rg.2.2.12420.44162",
+      "url": "http://hdl.handle.net/10773/44285",
+      "citation": "@phdthesis {\n\ttitle = {Recycling of polymers: a case study on poly(ethylene terephthalate) and poly(ethylene 2,5-furandicarboxylate)},\n\tyear = {2023},\n\tmonth = {jul},\n\turl = {http://hdl.handle.net/10773/44285},\n\tschool = {Universidade de Aveiro Departamento de Química},\n\tdoi = {10.13140/RG.2.2.12420.44162}\n}",
+      "external_ids": {
+        "doi": "10.13140/rg.2.2.12420.44162",
+        "source-work-id": "cv-prod-id-4622875",
+        "handle": "http://hdl.handle.net/10773/44285"
+      }
+    },
+    {
+      "id": "10.48528/nd5m-mk87",
+      "orcid_put_code": 139840785,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Optimized automated analysis characterizes alterations to mitochondrial dynamics in retinoid modulation and oxidative stress",
+      "year": 2023,
+      "month": 7,
+      "day": 12,
+      "venue": "Research Summit 2023",
+      "authors": [
+        "José J. M. Vitória",
+        "Vinícius de Paula",
+        "Vinícius de Paula",
+        "Odete A. B. da Cruz e Silva",
+        "Diogo Trigo"
+      ],
+      "doi": "10.48528/nd5m-mk87",
+      "url": "https://doi.org/10.48528/nd5m-mk87",
+      "citation": "J. J. M. Vitória, V. de Paula, O. A. B. da Cruz e Silva, and D. Trigo, “Optimized automated analysis\ncharacterizes alterations to mitochondrial dynamics in retinoid modulation and oxidative stress”, in Re-\nsearch Summit, (July 12–14), Aveiro, Portugal, 2023.",
+      "external_ids": {
+        "doi": "10.48528/nd5m-mk87"
+      }
+    },
+    {
+      "id": "orcid:139840596",
+      "orcid_put_code": 139840596,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Optimized automated analysis characterizes mitochondrial damage due to oxidative stress and rescue via retinoid acid receptor modulation",
+      "year": 2023,
+      "month": 5,
+      "day": null,
+      "venue": "MitoPorto",
+      "authors": [
+        "José J. M. Vitória",
+        "Vinícius de Paula",
+        "Vinícius de Paula",
+        "Letícia Pinheiro",
+        "Odete A. B. da Cruz e Silva",
+        "Diogo Trigo"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": "J. J. M. Vitória, V. de Paula, L. Pinheiro, O. A. B. da Cruz e Silva, and D. Trigo, “Optimized automated analysis characterizes mitochondrial damage due to oxidative stress and rescue via retinoid acid receptor modulation”, in MitoPorto, (May 12–13), Porto, Portugal, 2023.",
+      "external_ids": {}
+    },
+    {
+      "id": "10.48528/ym5m-v564",
+      "orcid_put_code": 139840100,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Optimized automated analysis characterizes mitochondrial damage due to oxidative stress and rescue via retinoid acid receptor modulation",
+      "year": 2023,
+      "month": 5,
+      "day": null,
+      "venue": "VI iBiMED Symposium",
+      "authors": [
+        "José J. M. Vitória",
+        "Vinícius de Paula",
+        "Vinícius de Paula",
+        "Letícia Pinheiro",
+        "Odete A. B. da Cruz e Silva",
+        "Diogo Trigo"
+      ],
+      "doi": "10.48528/ym5m-v564",
+      "url": "https://doi.org/10.48528/ym5m-v564",
+      "citation": "J. J. M. Vitória, V. de Paula, L. Pinheiro, O. A. B. da Cruz e Silva, and D. Trigo, “Optimized automated analysis characterizes mitochondrial damage due to oxidative stress and rescue via retinoid acid receptor modulation”, in iBiMED Symposium, (May 25–26), Aveiro, Portugal, 2023.",
+      "external_ids": {
+        "doi": "10.48528/ym5m-v564"
+      }
+    },
+    {
+      "id": "orcid:139840329",
+      "orcid_put_code": 139840329,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Impaired mitochondrial response to oxidative stress: Differentiating healthy from pathological ageing",
+      "year": 2023,
+      "month": 5,
+      "day": null,
+      "venue": "MitoPorto",
+      "authors": [
+        "Diogo Trigo",
+        "José J. M. Vitória",
+        "Vinícius de Paula",
+        "Vinícius de Paula",
+        "Letícia Pinheiro",
+        "Odete A. B. da Cruz e Silva"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": "D. Trigo, J. J. M. Vitória, V. de Paula, L. Pinheiro, and O. A. B. da Cruz e Silva, “Impaired mitochondrial response to oxidative stress: Differentiating healthy from pathological ageing”, in MitoPorto, (May 12–13), Porto, Portugal, 2023.",
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:139840900",
+      "orcid_put_code": 139840900,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Model system to monitor mitochondrial responses in cellular stress situations",
+      "year": 2023,
+      "month": 2,
+      "day": null,
+      "venue": "2nd Symposium on Alzheimer’s Disease: An Update on Pathology and Therapeutics",
+      "authors": [
+        "José J. M. Vitória",
+        "Vinícius de Paula",
+        "Vinícius de Paula",
+        "Odete A. B. da Cruz e Silva",
+        "Diogo Trigo"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": "J. J. M. Vitória, V. de Paula, O. A. B. da Cruz e Silva, and D. Trigo, “Model system to monitor mitochondrial responses in cellular stress situations”, in 2nd Symposium on Alzheimer’s Disease: An Update on Pathology and Therapeutics, (February 10–11), Porto, Portugal, 2023.",
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:139839821",
+      "orcid_put_code": 139839821,
+      "type": "conference-poster",
+      "category": "posters",
+      "title": "Optimising the automated analysis of live-imaged mitochondria with the MATLAB tool mitometer",
+      "year": 2022,
+      "month": 11,
+      "day": null,
+      "venue": "2nd Spanish & Portuguese Advanced Optical Microscopy Meeting",
+      "authors": [
+        "José J. M. Vitória",
+        "Vinícius de Paula",
+        "Vinícius de Paula",
+        "Odete A. B. da Cruz e Silva",
+        "Diogo Trigo"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": "J. J. M. Vitória, V. de Paula, O. A. B. da Cruz e Silva, and D. Trigo, “Optimising the automated analysis of live-imaged mitochondria with the MATLAB tool mitometer,” in Spanish & Portuguese Advanced\nOptical Microscopy Meeting, (November 23–25), Salamanca, Spain, 2022.",
+      "external_ids": {}
+    },
+    {
+      "id": "orcid:139839399",
+      "orcid_put_code": 139839399,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Lignin removal from eucalyptus wood during the magnesium-based acid sulphite pulping",
+      "year": 2022,
+      "month": 6,
+      "day": null,
+      "venue": "16th European Workshop on Lignocellulosics and Pulp",
+      "authors": [
+        "Inês S. F. Mendes",
+        "Vinícius de Paula",
+        "António Prates",
+        "Dmitry V. Evtuguin"
+      ],
+      "doi": null,
+      "url": "https://www.researchgate.net/publication/361813608_Lignin_removal_from_eucalyptus_wood_during_the_magnesium-based_acid_sulphite_pulping",
+      "citation": "I. S. F. Mendes, V. de Paula, A. Prates, and D. V. Evtyugin, “Lignin removal from eucalyptus wood during the magnesium-based acid sulphite pulping,” in European Workshop on Lignocellulosics and Pulp, (June 27–July 1), Gothemburg, Sweden, 2022.",
+      "external_ids": {}
+    }
+  ]
 }

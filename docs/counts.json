@@ -1,5 +1,12 @@
 {
-  "last_updated_utc": null,
-  "total": 0,
-  "by_category": {}
+  "last_updated_utc": "2026-07-15T08:59:27.285554+00:00",
+  "total": 49,
+  "by_category": {
+    "articles": 6,
+    "conference-abstracts": 1,
+    "dissemination": 4,
+    "oral-communications": 18,
+    "posters": 19,
+    "theses": 1
+  }
 }
