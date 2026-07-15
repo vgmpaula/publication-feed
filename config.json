@@ -1,0 +1,20 @@
+{
+  "orcid_id": "0000-0002-8255-9494",
+  "owner_name": "Vinícius de Paula",
+  "included_types": [
+    "journal-article",
+    "conference-paper",
+    "conference-output",
+    "conference-presentation",
+    "conference-poster",
+    "conference-abstract",
+    "dissertation-thesis",
+    "preprint",
+    "book",
+    "book-chapter",
+    "public-speech",
+    "blog-post",
+    "magazine-article",
+    "newspaper-article"
+  ]
+}

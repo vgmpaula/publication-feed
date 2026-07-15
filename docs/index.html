@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vinícius de Paula — Publication Feed Preview</title>
+  <style>
+    body { max-width: 900px; margin: 3rem auto; padding: 0 1.25rem; font-family: system-ui, sans-serif; line-height: 1.5; }
+    h1 { margin-bottom: .25rem; }
+    .meta { opacity: .7; margin-bottom: 2rem; }
+    .work { padding: 1rem 0; border-top: 1px solid #ddd; }
+    .title { font-weight: 700; }
+    .venue { font-style: italic; }
+    code { background: #f3f3f3; padding: .15rem .35rem; border-radius: .25rem; }
+  </style>
+</head>
+<body>
+  <h1>Publication feed preview</h1>
+  <p class="meta" id="meta">Loading <code>publications.json</code>…</p>
+  <main id="works"></main>
+
+  <script>
+    const labels = {
+      "articles": "Articles",
+      "oral-communications": "Oral communications",
+      "posters": "Posters",
+      "conference-abstracts": "Conference abstracts / outputs",
+      "theses": "Theses",
+      "dissemination": "Dissemination",
+      "other": "Other"
+    };
+
+    async function loadPublications() {
+      const response = await fetch("./publications.json", { cache: "no-store" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+
+      document.getElementById("meta").textContent =
+        `${data.total} ORCID works • ${data.owner_name} • updated ${data.last_updated_utc || "not yet synced"}`;
+
+      const grouped = Object.groupBy(data.works, work => work.category || "other");
+      const container = document.getElementById("works");
+
+      for (const [category, works] of Object.entries(grouped)) {
+        const section = document.createElement("section");
+        section.innerHTML = `<h2>${labels[category] || category}</h2>`;
+
+        for (const work of works) {
+          const article = document.createElement("article");
+          article.className = "work";
+          const title = work.url
+            ? `<a class="title" href="${work.url}">${work.title}</a>`
+            : `<span class="title">${work.title}</span>`;
+          const authors = work.authors?.length ? `<div>${work.authors.join(", ")}</div>` : "";
+          const venue = work.venue ? `<span class="venue">${work.venue}</span>` : "";
+          const year = work.year ? ` (${work.year})` : "";
+          const doi = work.doi ? `<div>DOI: ${work.doi}</div>` : "";
+          article.innerHTML = `${title}${authors}<div>${venue}${year}</div>${doi}`;
+          section.appendChild(article);
+        }
+        container.appendChild(section);
+      }
+    }
+
+    loadPublications().catch(error => {
+      document.getElementById("meta").textContent = `Could not load publication data: ${error.message}`;
+    });
+  </script>
+</body>
+</html>

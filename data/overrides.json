@@ -1,0 +1,6 @@
+{
+  "_instructions": "Optional display corrections. Keys may be DOI values or ORCID put codes as strings. Supported fields: category, title, year, venue, url, hidden.",
+  "10.1021/acssuschemeng.4c09545": {
+    "category": "articles"
+  }
+}
