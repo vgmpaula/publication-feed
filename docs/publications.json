@@ -1,7 +1,7 @@
 {
   "orcid_id": "0000-0002-8255-9494",
   "owner_name": "Vinícius de Paula",
-  "last_updated_utc": "2026-07-15T08:59:27.285554+00:00",
+  "last_updated_utc": "2026-07-15T10:14:58.262032+00:00",
   "total": 49,
   "works": [
     {
@@ -144,7 +144,7 @@
         "Andreia F. Sousa"
       ],
       "doi": "10.1016/j.scp.2026.102334",
-      "url": "http://dx.doi.org/10.1016/j.scp.2026.102334",
+      "url": "https://doi.org/10.1016/j.scp.2026.102334",
       "citation": "@article {\n\tauthor = {Feriel Abid and Paula S.S. Lacerda and Vinícius de Paula and Catarina F. Araújo and Fabio Aricò and Armando J.D. Silvestre and Andreia F. Sousa},\n\ttitle = {Breaking the cycle: A novel eco-friendly strategy for poly(hexamethylene 2,5-furandicarboxylate) synthesis and recycling},\n\tjournal = {Sustainable Chemistry and Pharmacy},\n\tyear = {2026},\n\tmonth = {apr},\n\turl = {http://dx.doi.org/10.1016/j.scp.2026.102334},\n\tdoi = {10.1016/j.scp.2026.102334}\n}",
       "external_ids": {
         "source-work-id": "cv-prod-id-4925952",
@@ -217,7 +217,7 @@
         "Maria-Iuliana Chirica"
       ],
       "doi": "10.1515/ci-2026-0203",
-      "url": "https://publons.com/wos-op/publon/83934620/",
+      "url": "https://doi.org/10.1515/ci-2026-0203",
       "citation": null,
       "external_ids": {
         "doi": "10.1515/ci-2026-0203"
@@ -922,7 +922,7 @@
         "Autor correspondente: Diogo Trigo."
       ],
       "doi": "10.3791/65452",
-      "url": "http://dx.doi.org/10.3791/65452",
+      "url": "https://doi.org/10.3791/65452",
       "citation": "@article {\n\tauthor = {José J. M. Vitória and Paula, Vinícius and Odete A. B. da Cruz e Silva and Diogo Trigo and Autor correspondente: Diogo Trigo.},\n\ttitle = {Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors},\n\tjournal = {Journal of Visualized Experiments},\n\tnumber = {197},\n\tyear = {2023},\n\tmonth = {jul},\n\turl = {http://dx.doi.org/10.3791/65452},\n\tdoi = {10.3791/65452}\n}",
       "external_ids": {
         "source-work-id": "cv-prod-id-3480232",
@@ -949,7 +949,7 @@
         "Diogo Trigo"
       ],
       "doi": "10.3791/65452-v",
-      "url": "http://dx.doi.org/10.3791/65452-v",
+      "url": "https://doi.org/10.3791/65452-v",
       "citation": null,
       "external_ids": {
         "doi": "10.3791/65452-v"
@@ -967,7 +967,7 @@
       "venue": "Universidade de Aveiro Departamento de Química",
       "authors": [],
       "doi": "10.13140/rg.2.2.12420.44162",
-      "url": "http://hdl.handle.net/10773/44285",
+      "url": "https://doi.org/10.13140/rg.2.2.12420.44162",
       "citation": "@phdthesis {\n\ttitle = {Recycling of polymers: a case study on poly(ethylene terephthalate) and poly(ethylene 2,5-furandicarboxylate)},\n\tyear = {2023},\n\tmonth = {jul},\n\turl = {http://hdl.handle.net/10773/44285},\n\tschool = {Universidade de Aveiro Departamento de Química},\n\tdoi = {10.13140/RG.2.2.12420.44162}\n}",
       "external_ids": {
         "doi": "10.13140/rg.2.2.12420.44162",
