@@ -1,8 +1,8 @@
 {
   "orcid_id": "0000-0002-8255-9494",
   "owner_name": "Vinícius de Paula",
-  "last_updated_utc": "2026-09-01T10:05:15.292300+00:00",
-  "total": 49,
+  "last_updated_utc": "2026-09-03T10:17:16.936829+00:00",
+  "total": 48,
   "works": [
     {
       "id": "orcid:216388898",
@@ -27,7 +27,7 @@
       "external_ids": {}
     },
     {
-      "id": "orcid:219801399",
+      "id": "10.48528/b6rd-j331",
       "orcid_put_code": 219801399,
       "type": "conference-presentation",
       "category": "oral-communications",
@@ -44,35 +44,12 @@
         "Armando J. D. Silvestre",
         "Andreia F. Sousa"
       ],
-      "doi": null,
-      "url": null,
+      "doi": "10.48528/b6rd-j331",
+      "url": "https://doi.org/10.48528/b6rd-j331",
       "citation": null,
-      "external_ids": {}
-    },
-    {
-      "id": "orcid:219801129",
-      "orcid_put_code": 219801129,
-      "type": "conference-presentation",
-      "category": "oral-communications",
-      "title": "Chasing the SAN: dissolution-based recycling of ABS polymers",
-      "year": 2026,
-      "month": 7,
-      "day": 16,
-      "venue": "Research Summit 2026",
-      "authors": [
-        "Vinícius de Paula",
-        "Paula S. S. Lacerda",
-        "Catarina F. Araújo",
-        "Paulo J. A. Ribeiro-Claro",
-        "Nathanaël Guigo",
-        "Filipe H. B. Sosa",
-        "Ana M. Ferreira",
-        "Andreia F. Sousa"
-      ],
-      "doi": null,
-      "url": null,
-      "citation": null,
-      "external_ids": {}
+      "external_ids": {
+        "doi": "10.48528/b6rd-j331"
+      }
     },
     {
       "id": "orcid:214617128",
