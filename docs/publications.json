@@ -1,57 +1,113 @@
 {
   "orcid_id": "0000-0002-8255-9494",
   "owner_name": "Vinícius de Paula",
-  "last_updated_utc": "2026-09-19T19:10:04.732771+00:00",
-  "total": 60,
-  "deduplication": {
-    "source_records": 69,
-    "merged_source_records": 9,
-    "merged_groups": [
-      {
-        "title": "Breaking the cycle: A novel eco-friendly strategy for poly(hexamethylene 2,5-furandicarboxylate) synthesis and recycling",
-        "category": "articles",
-        "kept_put_code": 203607653,
-        "merged_put_codes": [
-          203385432
-        ]
-      },
-      {
-        "title": "Closing the Loop: Greener and Efficient Hydrolytic Depolymerization for the Recycling of Polyesters Using Biobased Eutectic Solvents",
-        "category": "articles",
-        "kept_put_code": 179904996,
-        "merged_put_codes": [
-          178658110
-        ]
-      },
-      {
-        "title": "Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors",
-        "category": "articles",
-        "kept_put_code": 139886711,
-        "merged_put_codes": [
-          139683153,
-          140576272,
-          158339260
-        ]
-      },
+  "last_updated_utc": "2026-09-19T19:32:37.236053+00:00",
+  "total": 55,
+  "orcid_sync": {
+    "orcid_public_groups": 55,
+    "orcid_public_source_versions": 70,
+    "displayed_outputs": 55,
+    "grouped_source_versions": [
       {
         "title": "From Venice to the World: Inspiring the Next Generation of Green Chemists",
         "category": "articles",
-        "kept_put_code": 214293743,
-        "merged_put_codes": [
+        "preferred_put_code": 214424741,
+        "source_put_codes": [
           214293626,
+          214293743,
           214424741
+        ]
+      },
+      {
+        "title": "Breaking the cycle: A novel eco-friendly strategy for poly(hexamethylene 2,5-furandicarboxylate) synthesis and recycling",
+        "category": "articles",
+        "preferred_put_code": 203607653,
+        "source_put_codes": [
+          203385432,
+          203607653
         ]
       },
       {
         "title": "The Evaluation of Eutectic Solvents as Catalysts for Mediating the Greener Synthesis of Poly(alkylene 2,5-furandicarboxylate)s",
         "category": "articles",
-        "kept_put_code": 202931890,
-        "merged_put_codes": [
+        "preferred_put_code": 202931890,
+        "source_put_codes": [
           200687836,
-          200909474
+          200909474,
+          202931890
+        ]
+      },
+      {
+        "title": "Selective ABS Dissolution with Eutectic Solvents: Toward Greener Recycling",
+        "category": "conference-abstracts",
+        "preferred_put_code": 214293745,
+        "source_put_codes": [
+          204901819,
+          214293745
+        ]
+      },
+      {
+        "title": "Closing the Loop: Greener and Efficient Hydrolytic Depolymerization for the Recycling of Polyesters Using Biobased Eutectic Solvents",
+        "category": "articles",
+        "preferred_put_code": 178658110,
+        "source_put_codes": [
+          178658110,
+          179904996
+        ]
+      },
+      {
+        "title": "Development of poly(ethylene 2,5-furanodicarboxylate) sustainable nanostructures",
+        "category": "posters",
+        "preferred_put_code": 156114145,
+        "source_put_codes": [
+          156114145,
+          179904999
+        ]
+      },
+      {
+        "title": "Hydrolytic depolymerization of polyester waste: a case study on poly(ethylene 2,5-furandicarboxylate)",
+        "category": "posters",
+        "preferred_put_code": 156113955,
+        "source_put_codes": [
+          156113955,
+          179904998
+        ]
+      },
+      {
+        "title": "Recycling of poly(ethylene terephthalate) waste by efficient hydrolytic depolymerization with bio-based eutectic solvents",
+        "category": "posters",
+        "preferred_put_code": 139841141,
+        "source_put_codes": [
+          139841141,
+          179904997
+        ]
+      },
+      {
+        "title": "Recycling of polymers: a case study on poly(ethylene terephthalate) and poly(ethylene 2,5-furandicarboxylate)",
+        "category": "theses",
+        "preferred_put_code": 179905000,
+        "source_put_codes": [
+          139841662,
+          179905000
+        ]
+      },
+      {
+        "title": "Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors",
+        "category": "articles",
+        "preferred_put_code": 140576272,
+        "source_put_codes": [
+          139683153,
+          139886711,
+          140576272,
+          158339260
         ]
       }
-    ]
+    ],
+    "skipped_work_types": {
+      "lecture-speech": 1
+    },
+    "hidden_by_overrides": 0,
+    "note": "ORCID groups can contain several source versions, or occasionally distinct poster/abstract contributions. The website rebuilds from ORCID at every successful sync."
   },
   "works": [
     {
@@ -302,37 +358,6 @@
       ]
     },
     {
-      "id": "orcid:214293743",
-      "orcid_put_code": 214293743,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "From Venice to the World: Inspiring the Next Generation of Green Chemists",
-      "year": 2026,
-      "month": 4,
-      "day": 1,
-      "venue": "Chemistry International",
-      "authors": [
-        "Chícharo, Beatriz",
-        "de Paula, Vinícius",
-        "Bacatan, Bryle Matthew F.",
-        "Dotse, Joy Salome",
-        "Chirica, Maria-Iuliana"
-      ],
-      "doi": "10.1515/ci-2026-0203",
-      "url": "https://doi.org/10.1515/ci-2026-0203",
-      "citation": "@article {\n\tauthor = {Chícharo, Beatriz and de Paula, Vinícius and Bacatan, Bryle Matthew F. and Dotse, Joy Salome and Chirica, Maria-Iuliana},\n\ttitle = {From Venice to the World: Inspiring the Next Generation of Green Chemists},\n\tjournal = {Chemistry International},\n\tvolume = {48},\n\tnumber = {2},\n\tpages = {14--17},\n\tyear = {2026},\n\tmonth = {apr},\n\turl = {https://doi.org/10.1515/ci-2026-0203},\n\tdoi = {10.1515/ci-2026-0203}\n}",
-      "external_ids": {
-        "source-work-id": "cv-prod-id-5290582",
-        "issn": "1365-2192",
-        "doi": "10.1515/ci-2026-0203"
-      },
-      "source_put_codes": [
-        214293626,
-        214293743,
-        214424741
-      ]
-    },
-    {
       "id": "orcid:203607653",
       "orcid_put_code": 203607653,
       "type": "journal-article",
@@ -418,6 +443,35 @@
       ]
     },
     {
+      "id": "orcid:214424741",
+      "orcid_put_code": 214424741,
+      "type": "journal-article",
+      "category": "articles",
+      "title": "From Venice to the World: Inspiring the Next Generation of Green Chemists",
+      "year": 2026,
+      "month": null,
+      "day": null,
+      "venue": "Chemistry International",
+      "authors": [
+        "Beatriz Chícharo",
+        "Vinícius de Paula",
+        "Bryle Matthew F. Bacatan",
+        "Joy Salome Dotse",
+        "Maria-Iuliana Chirica"
+      ],
+      "doi": "10.1515/ci-2026-0203",
+      "url": "https://doi.org/10.1515/ci-2026-0203",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.1515/ci-2026-0203"
+      },
+      "source_put_codes": [
+        214293626,
+        214293743,
+        214424741
+      ]
+    },
+    {
       "id": "orcid:202931890",
       "orcid_put_code": 202931890,
       "type": "journal-article",
@@ -449,35 +503,6 @@
       ]
     },
     {
-      "id": "orcid:214293745",
-      "orcid_put_code": 214293745,
-      "type": "conference-paper",
-      "category": "conference-abstracts",
-      "title": "Selective ABS Dissolution with Eutectic Solvents: Toward Greener Recycling",
-      "year": 2025,
-      "month": 11,
-      "day": 19,
-      "venue": "3rd International Online Conference on Polymer Science",
-      "authors": [
-        "de Paula, Vinícius",
-        "Lacerda, Paula S. S.",
-        "Ceparano, Lorenzo",
-        "Sosa, Filipe H. B.",
-        "Ferreira, Ana M.",
-        "Sousa, Andreia F."
-      ],
-      "doi": "10.3390/proceedings2026136027",
-      "url": "https://doi.org/10.3390/proceedings2026136027",
-      "citation": "@inproceedings {\n\tauthor = {de Paula, Vinícius and Lacerda, Paula S. S. and Ceparano, Lorenzo and Sosa, Filipe H. B. and Ferreira, Ana M. and Sousa, Andreia F.},\n\ttitle = {Selective ABS Dissolution with Eutectic Solvents: Toward Greener Recycling},\n\tyear = {2025},\n\tmonth = {nov},\n\tbooktitle = {IOCPS 2025},\n\tpages = {27},\n\tpublisher = {MDPI},\n\tdoi = {10.3390/proceedings2026136027}\n}",
-      "external_ids": {
-        "source-work-id": "cv-prod-id-5016887",
-        "doi": "10.3390/proceedings2026136027"
-      },
-      "source_put_codes": [
-        214293745
-      ]
-    },
-    {
       "id": "orcid:187349546",
       "orcid_put_code": 187349546,
       "type": "conference-presentation",
@@ -504,31 +529,33 @@
       ]
     },
     {
-      "id": "orcid:204901819",
-      "orcid_put_code": 204901819,
+      "id": "orcid:214293745",
+      "orcid_put_code": 214293745,
       "type": "conference-paper",
       "category": "conference-abstracts",
       "title": "Selective ABS Dissolution with Eutectic Solvents: Toward Greener Recycling",
       "year": 2025,
       "month": 11,
-      "day": 14,
-      "venue": null,
+      "day": 19,
+      "venue": "3rd International Online Conference on Polymer Science",
       "authors": [
-        "Vinícius de Paula",
-        "Paula S. S. Lacerda",
-        "Lorenzo Ceparano",
-        "Filipe H. B. Sosa",
-        "Ana M. Ferreira",
-        "Andreia F. Sousa"
+        "de Paula, Vinícius",
+        "Lacerda, Paula S. S.",
+        "Ceparano, Lorenzo",
+        "Sosa, Filipe H. B.",
+        "Ferreira, Ana M.",
+        "Sousa, Andreia F."
       ],
       "doi": "10.3390/proceedings2026136027",
       "url": "https://doi.org/10.3390/proceedings2026136027",
-      "citation": null,
+      "citation": "@inproceedings {\n\tauthor = {de Paula, Vinícius and Lacerda, Paula S. S. and Ceparano, Lorenzo and Sosa, Filipe H. B. and Ferreira, Ana M. and Sousa, Andreia F.},\n\ttitle = {Selective ABS Dissolution with Eutectic Solvents: Toward Greener Recycling},\n\tyear = {2025},\n\tmonth = {nov},\n\tbooktitle = {IOCPS 2025},\n\tpages = {27},\n\tpublisher = {MDPI},\n\tdoi = {10.3390/proceedings2026136027}\n}",
       "external_ids": {
+        "source-work-id": "cv-prod-id-5016887",
         "doi": "10.3390/proceedings2026136027"
       },
       "source_put_codes": [
-        204901819
+        204901819,
+        214293745
       ]
     },
     {
@@ -716,6 +743,34 @@
       ]
     },
     {
+      "id": "orcid:178658110",
+      "orcid_put_code": 178658110,
+      "type": "journal-article",
+      "category": "articles",
+      "title": "Closing the Loop: Greener and Efficient Hydrolytic Depolymerization for the Recycling of Polyesters Using Biobased Eutectic Solvents",
+      "year": 2025,
+      "month": 3,
+      "day": 10,
+      "venue": "ACS Sustainable Chemistry & Engineering",
+      "authors": [
+        "Vinícius de Paula",
+        "Simão V. Pandeirada",
+        "Paulo J. A. Ribeiro-Claro",
+        "Armando J. D. Silvestre",
+        "Andreia F. Sousa"
+      ],
+      "doi": "10.1021/acssuschemeng.4c09545",
+      "url": "https://doi.org/10.1021/acssuschemeng.4c09545",
+      "citation": null,
+      "external_ids": {
+        "doi": "10.1021/acssuschemeng.4c09545"
+      },
+      "source_put_codes": [
+        178658110,
+        179904996
+      ]
+    },
+    {
       "id": "orcid:176362881",
       "orcid_put_code": 176362881,
       "type": "conference-poster",
@@ -739,37 +794,6 @@
       "external_ids": {},
       "source_put_codes": [
         176362881
-      ]
-    },
-    {
-      "id": "orcid:179904996",
-      "orcid_put_code": 179904996,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "Closing the Loop: Greener and Efficient Hydrolytic Depolymerization for the Recycling of Polyesters Using Biobased Eutectic Solvents",
-      "year": 2025,
-      "month": 2,
-      "day": 21,
-      "venue": "ACS Sustainable Chemistry &amp; Engineering",
-      "authors": [
-        "de Paula, Vinícius",
-        "Simão V. Pandeirada",
-        "Ribeiro-Claro, Paulo J. A.",
-        "Silvestre, Armando J. D.",
-        "Sousa, Andreia F.",
-        "Autor correspondente: Sousa, Andreia F.."
-      ],
-      "doi": "10.1021/acssuschemeng.4c09545",
-      "url": "https://doi.org/10.1021/acssuschemeng.4c09545",
-      "citation": "@article {\n\tauthor = {de Paula, Vinícius and Simão V. Pandeirada and Ribeiro-Claro, Paulo J. A. and Silvestre, Armando J. D. and Sousa, Andreia F. and Autor correspondente: Sousa, Andreia F..},\n\ttitle = {Closing the Loop: Greener and Efficient Hydrolytic Depolymerization for the Recycling of Polyesters Using Biobased Eutectic Solvents},\n\tjournal = {ACS Sustainable Chemistry &amp; Engineering},\n\tvolume = {13},\n\tnumber = {9},\n\tpages = {3577--3587},\n\tyear = {2025},\n\tmonth = {feb},\n\turl = {https://doi.org/10.1021/acssuschemeng.4c09545},\n\tdoi = {10.1021/acssuschemeng.4c09545}\n}",
-      "external_ids": {
-        "doi": "10.1021/acssuschemeng.4c09545",
-        "source-work-id": "cv-prod-id-4622871",
-        "issn": "2168-0485"
-      },
-      "source_put_codes": [
-        178658110,
-        179904996
       ]
     },
     {
@@ -1127,32 +1151,7 @@
         "doi": "10.5281/zenodo.11203822"
       },
       "source_put_codes": [
-        156113955
-      ]
-    },
-    {
-      "id": "orcid:179904998",
-      "orcid_put_code": 179904998,
-      "type": "conference-poster",
-      "category": "posters",
-      "title": "Hydrolytic depolymerization of polyester waste: a case study on poly(ethylene 2,5-furandicarboxylate)",
-      "year": 2024,
-      "month": 4,
-      "day": 4,
-      "venue": null,
-      "authors": [
-        "Vinícius de Paula",
-        "Armando J. D. Silvestre",
-        "Andreia F. Sousa"
-      ],
-      "doi": "10.5281/zenodo.11203822",
-      "url": "https://doi.org/10.5281/zenodo.11203822",
-      "citation": "@misc {\n\tauthor = {Vinícius de Paula and Armando J. D. Silvestre and Andreia F. Sousa},\n\ttitle = {Hydrolytic depolymerization of polyester waste: a case study on poly(ethylene 2,5-furandicarboxylate)},\n\tyear = {2024},\n\tmonth = {apr},\n\tdoi = {10.5281/zenodo.11203822}\n}",
-      "external_ids": {
-        "source-work-id": "cv-prod-id-4622873",
-        "doi": "10.5281/zenodo.11203822"
-      },
-      "source_put_codes": [
+        156113955,
         179904998
       ]
     },
@@ -1204,35 +1203,7 @@
         "doi": "10.5281/zenodo.11203686"
       },
       "source_put_codes": [
-        156114145
-      ]
-    },
-    {
-      "id": "orcid:179904999",
-      "orcid_put_code": 179904999,
-      "type": "conference-poster",
-      "category": "posters",
-      "title": "Development of poly(ethylene 2,5-furanodicarboxylate) sustainable nanostructures",
-      "year": 2024,
-      "month": 4,
-      "day": 4,
-      "venue": null,
-      "authors": [
-        "Luísa Figueiredo",
-        "Beatriz Agostinho",
-        "Vinícius de Paula",
-        "Sónia A. O. Santos",
-        "Ricardo J. B. Pinto",
-        "Andreia F. Sousa"
-      ],
-      "doi": "10.5281/zenodo.11203686",
-      "url": "https://doi.org/10.5281/zenodo.11203686",
-      "citation": "@misc {\n\tauthor = {Luísa Figueiredo and Beatriz Agostinho and Vinícius de Paula and Sónia A. O. Santos and Ricardo J. B. Pinto and Andreia F. Sousa},\n\ttitle = {Development of poly(ethylene 2,5-furanodicarboxylate) sustainable nanostructures},\n\tyear = {2024},\n\tmonth = {apr},\n\tdoi = {10.5281/zenodo.11203686}\n}",
-      "external_ids": {
-        "source-work-id": "cv-prod-id-4622874",
-        "doi": "10.5281/zenodo.11203686"
-      },
-      "source_put_codes": [
+        156114145,
         179904999
       ]
     },
@@ -1329,68 +1300,8 @@
         "doi": "10.5281/zenodo.11203385"
       },
       "source_put_codes": [
-        139841141
-      ]
-    },
-    {
-      "id": "orcid:179904997",
-      "orcid_put_code": 179904997,
-      "type": "conference-poster",
-      "category": "posters",
-      "title": "Recycling of poly(ethylene terephthalate) waste by efficient hydrolytic depolymerization with bio-based eutectic solvents",
-      "year": 2023,
-      "month": 9,
-      "day": null,
-      "venue": null,
-      "authors": [
-        "Vinícius de Paula",
-        "Armando J. D. Silvestre",
-        "Andreia F. Sousa"
-      ],
-      "doi": "10.5281/zenodo.11203385",
-      "url": "https://doi.org/10.5281/zenodo.11203385",
-      "citation": "@misc {\n\tauthor = {Vinícius de Paula and Armando J. D. Silvestre and Andreia F. Sousa},\n\ttitle = {Recycling of poly(ethylene terephthalate) waste by efficient hydrolytic depolymerization with bio-based eutectic solvents},\n\tyear = {2023},\n\tmonth = {sep},\n\tdoi = {10.5281/zenodo.11203385}\n}",
-      "external_ids": {
-        "source-work-id": "cv-prod-id-4622872",
-        "isbn": "978-972-745-327-6",
-        "doi": "10.5281/zenodo.11203385"
-      },
-      "source_put_codes": [
+        139841141,
         179904997
-      ]
-    },
-    {
-      "id": "orcid:139886711",
-      "orcid_put_code": 139886711,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors",
-      "year": 2023,
-      "month": 7,
-      "day": 28,
-      "venue": "Journal of Visualized Experiments",
-      "authors": [
-        "José J. M. Vitória",
-        "Paula, Vinícius",
-        "Odete A. B. da Cruz e Silva",
-        "Diogo Trigo",
-        "Autor correspondente: Diogo Trigo."
-      ],
-      "doi": "10.3791/65452",
-      "url": "https://doi.org/10.3791/65452",
-      "citation": "@article {\n\tauthor = {José J. M. Vitória and Paula, Vinícius and Odete A. B. da Cruz e Silva and Diogo Trigo and Autor correspondente: Diogo Trigo.},\n\ttitle = {Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors},\n\tjournal = {Journal of Visualized Experiments},\n\tnumber = {197},\n\tyear = {2023},\n\tmonth = {jul},\n\turl = {http://dx.doi.org/10.3791/65452},\n\tdoi = {10.3791/65452}\n}",
-      "external_ids": {
-        "source-work-id": "cv-prod-id-3480232",
-        "doi": "10.3791/65452",
-        "eid": "2-s2.0-85166566795",
-        "wosuid": "WOS:001061584300009",
-        "issn": "1940-087X"
-      },
-      "source_put_codes": [
-        139683153,
-        139886711,
-        140576272,
-        158339260
       ]
     },
     {
@@ -1420,29 +1331,6 @@
       ]
     },
     {
-      "id": "orcid:139841662",
-      "orcid_put_code": 139841662,
-      "type": "dissertation-thesis",
-      "category": "theses",
-      "title": "Recycling of polymers: a case study on poly(ethylene terephthalate) and poly(ethylene 2,5-furandicarboxylate)",
-      "year": 2023,
-      "month": 7,
-      "day": 19,
-      "venue": null,
-      "authors": [
-        "Vinícius de Paula"
-      ],
-      "doi": "10.13140/rg.2.2.12420.44162",
-      "url": "https://doi.org/10.13140/rg.2.2.12420.44162",
-      "citation": "V. de Paula, Recycling of polymers: A case study on poly(ethylene terephthalate) and poly(ethylene 2,5-\nfurandicarboxylate), M.S. thesis, Department of Chemistry, University of Aveiro, Aveiro, Portugal, 2023. DOI: 10.13140/RG.2.2.12420.44162.",
-      "external_ids": {
-        "doi": "10.13140/rg.2.2.12420.44162"
-      },
-      "source_put_codes": [
-        139841662
-      ]
-    },
-    {
       "id": "orcid:179905000",
       "orcid_put_code": 179905000,
       "type": "dissertation-thesis",
@@ -1462,6 +1350,7 @@
         "handle": "http://hdl.handle.net/10773/44285"
       },
       "source_put_codes": [
+        139841662,
         179905000
       ]
     },
@@ -1595,6 +1484,37 @@
       "external_ids": {},
       "source_put_codes": [
         139840900
+      ]
+    },
+    {
+      "id": "orcid:140576272",
+      "orcid_put_code": 140576272,
+      "type": "journal-article",
+      "category": "articles",
+      "title": "Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors",
+      "year": 2023,
+      "month": null,
+      "day": null,
+      "venue": "Journal of Visualized Experiments",
+      "authors": [
+        "Vitória, J.J.M.",
+        "de Paula, V.",
+        "da Cruz e Silva, O.A.B.",
+        "Trigo, D."
+      ],
+      "doi": "10.3791/65452",
+      "url": "https://doi.org/10.3791/65452",
+      "citation": "@article{de Paula2023,title = {Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors},journal = {Journal of Visualized Experiments},year = {2023},volume = {2023},number = {197},author = {Vit{\\'o}ria, J.J.M. and de Paula, V. and da Cruz e Silva, O.A.B. and Trigo, D.}}",
+      "external_ids": {
+        "doi": "10.3791/65452",
+        "eid": "2-s2.0-85166566795",
+        "issn": "1940087X"
+      },
+      "source_put_codes": [
+        139683153,
+        139886711,
+        140576272,
+        158339260
       ]
     },
     {
