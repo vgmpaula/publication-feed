@@ -1,8 +1,58 @@
 {
   "orcid_id": "0000-0002-8255-9494",
   "owner_name": "Vinícius de Paula",
-  "last_updated_utc": "2026-09-19T18:59:03.723852+00:00",
-  "total": 69,
+  "last_updated_utc": "2026-09-19T19:10:04.732771+00:00",
+  "total": 60,
+  "deduplication": {
+    "source_records": 69,
+    "merged_source_records": 9,
+    "merged_groups": [
+      {
+        "title": "Breaking the cycle: A novel eco-friendly strategy for poly(hexamethylene 2,5-furandicarboxylate) synthesis and recycling",
+        "category": "articles",
+        "kept_put_code": 203607653,
+        "merged_put_codes": [
+          203385432
+        ]
+      },
+      {
+        "title": "Closing the Loop: Greener and Efficient Hydrolytic Depolymerization for the Recycling of Polyesters Using Biobased Eutectic Solvents",
+        "category": "articles",
+        "kept_put_code": 179904996,
+        "merged_put_codes": [
+          178658110
+        ]
+      },
+      {
+        "title": "Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors",
+        "category": "articles",
+        "kept_put_code": 139886711,
+        "merged_put_codes": [
+          139683153,
+          140576272,
+          158339260
+        ]
+      },
+      {
+        "title": "From Venice to the World: Inspiring the Next Generation of Green Chemists",
+        "category": "articles",
+        "kept_put_code": 214293743,
+        "merged_put_codes": [
+          214293626,
+          214424741
+        ]
+      },
+      {
+        "title": "The Evaluation of Eutectic Solvents as Catalysts for Mediating the Greener Synthesis of Poly(alkylene 2,5-furandicarboxylate)s",
+        "category": "articles",
+        "kept_put_code": 202931890,
+        "merged_put_codes": [
+          200687836,
+          200909474
+        ]
+      }
+    ]
+  },
   "works": [
     {
       "id": "orcid:227214843",
@@ -27,7 +77,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        227214843
+      ]
     },
     {
       "id": "orcid:227214781",
@@ -52,7 +105,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        227214781
+      ]
     },
     {
       "id": "orcid:227214694",
@@ -75,7 +131,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        227214694
+      ]
     },
     {
       "id": "orcid:227214624",
@@ -98,7 +157,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        227214624
+      ]
     },
     {
       "id": "orcid:216388898",
@@ -120,7 +182,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        216388898
+      ]
     },
     {
       "id": "orcid:219801399",
@@ -145,7 +210,10 @@
       "citation": null,
       "external_ids": {
         "doi": "10.48528/b6rd-j331"
-      }
+      },
+      "source_put_codes": [
+        219801399
+      ]
     },
     {
       "id": "orcid:219801129",
@@ -172,7 +240,10 @@
       "citation": null,
       "external_ids": {
         "doi": "10.48528/b6rd-j331"
-      }
+      },
+      "source_put_codes": [
+        219801129
+      ]
     },
     {
       "id": "orcid:214617128",
@@ -198,7 +269,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        214617128
+      ]
     },
     {
       "id": "orcid:212660736",
@@ -222,7 +296,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        212660736
+      ]
     },
     {
       "id": "orcid:214293743",
@@ -248,32 +325,12 @@
         "source-work-id": "cv-prod-id-5290582",
         "issn": "1365-2192",
         "doi": "10.1515/ci-2026-0203"
-      }
-    },
-    {
-      "id": "orcid:214293626",
-      "orcid_put_code": 214293626,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "From Venice to the World: Inspiring the Next Generation of Green Chemists",
-      "year": 2026,
-      "month": 4,
-      "day": 1,
-      "venue": "Chemistry International",
-      "authors": [
-        "Beatriz Chícharo",
-        "Vinícius de Paula",
-        "Bryle Matthew F. Bacatan",
-        "Joy Salome Dotse",
-        "Maria-Iuliana Chirica"
-      ],
-      "doi": "10.1515/ci-2026-0203",
-      "url": "http://dx.doi.org/10.1515/ci-2026-0203",
-      "citation": null,
-      "external_ids": {
-        "doi": "10.1515/ci-2026-0203",
-        "issn": "1365-2192"
-      }
+      },
+      "source_put_codes": [
+        214293626,
+        214293743,
+        214424741
+      ]
     },
     {
       "id": "orcid:203607653",
@@ -295,40 +352,17 @@
         "Andreia F. Sousa"
       ],
       "doi": "10.1016/j.scp.2026.102334",
-      "url": "http://dx.doi.org/10.1016/j.scp.2026.102334",
+      "url": "https://doi.org/10.1016/j.scp.2026.102334",
       "citation": "@article {\n\tauthor = {Feriel Abid and Paula S.S. Lacerda and Vinícius de Paula and Catarina F. Araújo and Fabio Aricò and Armando J.D. Silvestre and Andreia F. Sousa},\n\ttitle = {Breaking the cycle: A novel eco-friendly strategy for poly(hexamethylene 2,5-furandicarboxylate) synthesis and recycling},\n\tjournal = {Sustainable Chemistry and Pharmacy},\n\tyear = {2026},\n\tmonth = {apr},\n\turl = {http://dx.doi.org/10.1016/j.scp.2026.102334},\n\tdoi = {10.1016/j.scp.2026.102334}\n}",
       "external_ids": {
         "source-work-id": "cv-prod-id-4925952",
         "issn": "2352-5541",
         "doi": "10.1016/j.scp.2026.102334"
-      }
-    },
-    {
-      "id": "orcid:203385432",
-      "orcid_put_code": 203385432,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "Breaking the cycle: A novel eco-friendly strategy for poly(hexamethylene 2,5-furandicarboxylate) synthesis and recycling",
-      "year": 2026,
-      "month": 4,
-      "day": null,
-      "venue": "Sustainable Chemistry and Pharmacy",
-      "authors": [
-        "Feriel Abid",
-        "Paula S.S. Lacerda",
-        "Vinícius de Paula",
-        "Catarina F. Araújo",
-        "Fabio Aricò",
-        "Armando J.D. Silvestre",
-        "Andreia F. Sousa"
-      ],
-      "doi": "10.1016/j.scp.2026.102334",
-      "url": "http://dx.doi.org/10.1016/j.scp.2026.102334",
-      "citation": null,
-      "external_ids": {
-        "doi": "10.1016/j.scp.2026.102334",
-        "issn": "2352-5541"
-      }
+      },
+      "source_put_codes": [
+        203385432,
+        203607653
+      ]
     },
     {
       "id": "orcid:211833977",
@@ -351,7 +385,10 @@
         "source-work-id": "cv-prod-id-5275261",
         "issn": "2183-1270",
         "doi": "10.24927/rce2026.004"
-      }
+      },
+      "source_put_codes": [
+        211833977
+      ]
     },
     {
       "id": "orcid:212220669",
@@ -375,54 +412,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
-    },
-    {
-      "id": "orcid:214424741",
-      "orcid_put_code": 214424741,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "From Venice to the World: Inspiring the Next Generation of Green Chemists",
-      "year": 2026,
-      "month": null,
-      "day": null,
-      "venue": "Chemistry International",
-      "authors": [
-        "Beatriz Chícharo",
-        "Vinícius de Paula",
-        "Bryle Matthew F. Bacatan",
-        "Joy Salome Dotse",
-        "Maria-Iuliana Chirica"
-      ],
-      "doi": "10.1515/ci-2026-0203",
-      "url": "https://publons.com/wos-op/publon/83934620/",
-      "citation": null,
-      "external_ids": {
-        "doi": "10.1515/ci-2026-0203"
-      }
-    },
-    {
-      "id": "orcid:200687836",
-      "orcid_put_code": 200687836,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "The Evaluation of Eutectic Solvents as Catalysts for Mediating the Greener Synthesis of Poly(alkylene 2,5-furandicarboxylate)s",
-      "year": 2025,
-      "month": 12,
-      "day": 24,
-      "venue": "Molecules",
-      "authors": [
-        "Beatriz Agostinho",
-        "Vinícius de Paula",
-        "Armando J. D. Silvestre",
-        "Andreia F. Sousa"
-      ],
-      "doi": "10.3390/molecules31010077",
-      "url": "https://doi.org/10.3390/molecules31010077",
-      "citation": null,
-      "external_ids": {
-        "doi": "10.3390/molecules31010077"
-      }
+      "external_ids": {},
+      "source_put_codes": [
+        212220669
+      ]
     },
     {
       "id": "orcid:202931890",
@@ -448,53 +441,12 @@
         "source-work-id": "cv-prod-id-4885944",
         "issn": "1420-3049",
         "doi": "10.3390/molecules31010077"
-      }
-    },
-    {
-      "id": "orcid:200909474",
-      "orcid_put_code": 200909474,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "The Evaluation of Eutectic Solvents as Catalysts for Mediating the Greener Synthesis of Poly(alkylene 2,5-furandicarboxylate)s",
-      "year": 2025,
-      "month": 12,
-      "day": null,
-      "venue": "Molecules",
-      "authors": [
-        "Beatriz Agostinho",
-        "Vinícius de Paula",
-        "Armando J. D. Silvestre",
-        "Andreia F. Sousa"
-      ],
-      "doi": "10.3390/molecules31010077",
-      "url": "https://www.mdpi.com/1420-3049/31/1/77",
-      "citation": null,
-      "external_ids": {
-        "doi": "10.3390/molecules31010077"
-      }
-    },
-    {
-      "id": "orcid:187349546",
-      "orcid_put_code": 187349546,
-      "type": "conference-presentation",
-      "category": "oral-communications",
-      "title": "Selective ABS dissolution with eutectic solvents: toward greener recycling",
-      "year": 2025,
-      "month": 11,
-      "day": 19,
-      "venue": "3rd International Online Conference on Polymer Science",
-      "authors": [
-        "Vinícius de Paula",
-        "Paula S. S. Lacerda",
-        "Lorenzo Ceparano",
-        "Filipe H. B. Sosa",
-        "Ana M. Ferreira",
-        "Andreia F. Sousa"
-      ],
-      "doi": null,
-      "url": null,
-      "citation": null,
-      "external_ids": {}
+      },
+      "source_put_codes": [
+        200687836,
+        200909474,
+        202931890
+      ]
     },
     {
       "id": "orcid:214293745",
@@ -520,7 +472,36 @@
       "external_ids": {
         "source-work-id": "cv-prod-id-5016887",
         "doi": "10.3390/proceedings2026136027"
-      }
+      },
+      "source_put_codes": [
+        214293745
+      ]
+    },
+    {
+      "id": "orcid:187349546",
+      "orcid_put_code": 187349546,
+      "type": "conference-presentation",
+      "category": "oral-communications",
+      "title": "Selective ABS dissolution with eutectic solvents: toward greener recycling",
+      "year": 2025,
+      "month": 11,
+      "day": 19,
+      "venue": "3rd International Online Conference on Polymer Science",
+      "authors": [
+        "Vinícius de Paula",
+        "Paula S. S. Lacerda",
+        "Lorenzo Ceparano",
+        "Filipe H. B. Sosa",
+        "Ana M. Ferreira",
+        "Andreia F. Sousa"
+      ],
+      "doi": null,
+      "url": null,
+      "citation": null,
+      "external_ids": {},
+      "source_put_codes": [
+        187349546
+      ]
     },
     {
       "id": "orcid:204901819",
@@ -545,7 +526,10 @@
       "citation": null,
       "external_ids": {
         "doi": "10.3390/proceedings2026136027"
-      }
+      },
+      "source_put_codes": [
+        204901819
+      ]
     },
     {
       "id": "orcid:194197139",
@@ -569,7 +553,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        194197139
+      ]
     },
     {
       "id": "orcid:187349494",
@@ -595,7 +582,10 @@
       "external_ids": {
         "doi": "10.48528/6spv-r402",
         "isbn": "978-989-9253-31-5"
-      }
+      },
+      "source_put_codes": [
+        187349494
+      ]
     },
     {
       "id": "orcid:206065836",
@@ -617,7 +607,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        206065836
+      ]
     },
     {
       "id": "orcid:183944337",
@@ -639,7 +632,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        183944337
+      ]
     },
     {
       "id": "orcid:177320316",
@@ -662,7 +658,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        177320316
+      ]
     },
     {
       "id": "orcid:180929378",
@@ -685,7 +684,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        180929378
+      ]
     },
     {
       "id": "orcid:180929566",
@@ -708,31 +710,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
-    },
-    {
-      "id": "orcid:178658110",
-      "orcid_put_code": 178658110,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "Closing the Loop: Greener and Efficient Hydrolytic Depolymerization for the Recycling of Polyesters Using Biobased Eutectic Solvents",
-      "year": 2025,
-      "month": 3,
-      "day": 10,
-      "venue": "ACS Sustainable Chemistry & Engineering",
-      "authors": [
-        "Vinícius de Paula",
-        "Simão V. Pandeirada",
-        "Paulo J. A. Ribeiro-Claro",
-        "Armando J. D. Silvestre",
-        "Andreia F. Sousa"
-      ],
-      "doi": "10.1021/acssuschemeng.4c09545",
-      "url": "https://doi.org/10.1021/acssuschemeng.4c09545",
-      "citation": null,
-      "external_ids": {
-        "doi": "10.1021/acssuschemeng.4c09545"
-      }
+      "external_ids": {},
+      "source_put_codes": [
+        180929566
+      ]
     },
     {
       "id": "orcid:176362881",
@@ -755,7 +736,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        176362881
+      ]
     },
     {
       "id": "orcid:179904996",
@@ -782,7 +766,11 @@
         "doi": "10.1021/acssuschemeng.4c09545",
         "source-work-id": "cv-prod-id-4622871",
         "issn": "2168-0485"
-      }
+      },
+      "source_put_codes": [
+        178658110,
+        179904996
+      ]
     },
     {
       "id": "orcid:176200020",
@@ -805,7 +793,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        176200020
+      ]
     },
     {
       "id": "orcid:177319992",
@@ -825,7 +816,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        177319992
+      ]
     },
     {
       "id": "orcid:166654317",
@@ -848,7 +842,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        166654317
+      ]
     },
     {
       "id": "orcid:166654252",
@@ -872,7 +869,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        166654252
+      ]
     },
     {
       "id": "orcid:156114375",
@@ -894,7 +894,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        156114375
+      ]
     },
     {
       "id": "orcid:156114326",
@@ -916,7 +919,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        156114326
+      ]
     },
     {
       "id": "orcid:166810686",
@@ -934,7 +940,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        166810686
+      ]
     },
     {
       "id": "orcid:156114260",
@@ -956,7 +965,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        156114260
+      ]
     },
     {
       "id": "orcid:156114221",
@@ -976,7 +988,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        156114221
+      ]
     },
     {
       "id": "orcid:178982219",
@@ -1002,7 +1017,10 @@
       "citation": null,
       "external_ids": {
         "doi": "10.48528/5rnm-k519"
-      }
+      },
+      "source_put_codes": [
+        178982219
+      ]
     },
     {
       "id": "orcid:158506392",
@@ -1024,7 +1042,10 @@
       "citation": null,
       "external_ids": {
         "doi": "10.48528/5rnm-k519"
-      }
+      },
+      "source_put_codes": [
+        158506392
+      ]
     },
     {
       "id": "orcid:159317916",
@@ -1050,7 +1071,10 @@
       "citation": null,
       "external_ids": {
         "doi": "10.5281/zenodo.11203686"
-      }
+      },
+      "source_put_codes": [
+        159317916
+      ]
     },
     {
       "id": "orcid:162881359",
@@ -1076,7 +1100,10 @@
       "citation": null,
       "external_ids": {
         "doi": "10.48528/m4m7-bp37"
-      }
+      },
+      "source_put_codes": [
+        162881359
+      ]
     },
     {
       "id": "orcid:156113955",
@@ -1098,7 +1125,10 @@
       "citation": null,
       "external_ids": {
         "doi": "10.5281/zenodo.11203822"
-      }
+      },
+      "source_put_codes": [
+        156113955
+      ]
     },
     {
       "id": "orcid:179904998",
@@ -1121,7 +1151,10 @@
       "external_ids": {
         "source-work-id": "cv-prod-id-4622873",
         "doi": "10.5281/zenodo.11203822"
-      }
+      },
+      "source_put_codes": [
+        179904998
+      ]
     },
     {
       "id": "orcid:156113995",
@@ -1141,7 +1174,10 @@
       "doi": null,
       "url": null,
       "citation": null,
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        156113995
+      ]
     },
     {
       "id": "orcid:156114145",
@@ -1166,7 +1202,10 @@
       "citation": null,
       "external_ids": {
         "doi": "10.5281/zenodo.11203686"
-      }
+      },
+      "source_put_codes": [
+        156114145
+      ]
     },
     {
       "id": "orcid:179904999",
@@ -1192,7 +1231,10 @@
       "external_ids": {
         "source-work-id": "cv-prod-id-4622874",
         "doi": "10.5281/zenodo.11203686"
-      }
+      },
+      "source_put_codes": [
+        179904999
+      ]
     },
     {
       "id": "orcid:156113909",
@@ -1212,7 +1254,10 @@
       "doi": null,
       "url": null,
       "citation": "V. de Paula, A. J. D. Silvestre, and A. F. Sousa, “Recycling of polyester waste via hydrolytic depolymerization with terpenoid-based eutectic solvents”, in 2nd RSC Poster, (March 5), Online, 2024.",
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        156113909
+      ]
     },
     {
       "id": "orcid:143741108",
@@ -1232,7 +1277,10 @@
       "doi": null,
       "url": null,
       "citation": "V. de Paula, A. J. D. Silvestre, and A. F. Sousa, “Towards Greener Recycling of Polyesters Using Bio-based Eutectic Solvents”, in Jornadas CICECO, (October 12), Aveiro, 2023.",
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        143741108
+      ]
     },
     {
       "id": "orcid:139841248",
@@ -1252,7 +1300,10 @@
       "doi": null,
       "url": null,
       "citation": "V. de Paula, A. J. D. Silvestre, and A. F. Sousa, “Greener recycling of polyesters through hydrolytic depolymerization: Unveiling the potential of terpenoid-based eutectic solvents”, in FUR4Sustain Young Happy Hour, (October 13), Online, 2023.",
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        139841248
+      ]
     },
     {
       "id": "orcid:139841141",
@@ -1276,7 +1327,10 @@
       "external_ids": {
         "isbn": "978-972-745-327-6",
         "doi": "10.5281/zenodo.11203385"
-      }
+      },
+      "source_put_codes": [
+        139841141
+      ]
     },
     {
       "id": "orcid:179904997",
@@ -1300,31 +1354,10 @@
         "source-work-id": "cv-prod-id-4622872",
         "isbn": "978-972-745-327-6",
         "doi": "10.5281/zenodo.11203385"
-      }
-    },
-    {
-      "id": "orcid:139683153",
-      "orcid_put_code": 139683153,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors",
-      "year": 2023,
-      "month": 7,
-      "day": 28,
-      "venue": "Journal of Visualized Experiments",
-      "authors": [
-        "José J. M. Vitória",
-        "Vinícius de Paula",
-        "Odete A. B. da Cruz e Silva",
-        "Diogo Trigo"
-      ],
-      "doi": "10.3791/65452",
-      "url": "http://dx.doi.org/10.3791/65452",
-      "citation": "@article{Vit_ria_2023,\tdoi = {10.3791/65452},\turl = {https://doi.org/10.3791%2F65452},\tyear = 2023,\tmonth = {jul},\tpublisher = {{MyJove} Corporation},\tnumber = {197},\tauthor = {Jos{\\'{e}} J. M. Vit{\\'{o}}ria and Vin{\\'{\\i}}cius de Paula and Odete A. B. da Cruz e Silva and Diogo Trigo},\ttitle = {Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors},\tjournal = {Journal of Visualized Experiments}}",
-      "external_ids": {
-        "doi": "10.3791/65452",
-        "issn": "1940-087X"
-      }
+      },
+      "source_put_codes": [
+        179904997
+      ]
     },
     {
       "id": "orcid:139886711",
@@ -1344,7 +1377,7 @@
         "Autor correspondente: Diogo Trigo."
       ],
       "doi": "10.3791/65452",
-      "url": "http://dx.doi.org/10.3791/65452",
+      "url": "https://doi.org/10.3791/65452",
       "citation": "@article {\n\tauthor = {José J. M. Vitória and Paula, Vinícius and Odete A. B. da Cruz e Silva and Diogo Trigo and Autor correspondente: Diogo Trigo.},\n\ttitle = {Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors},\n\tjournal = {Journal of Visualized Experiments},\n\tnumber = {197},\n\tyear = {2023},\n\tmonth = {jul},\n\turl = {http://dx.doi.org/10.3791/65452},\n\tdoi = {10.3791/65452}\n}",
       "external_ids": {
         "source-work-id": "cv-prod-id-3480232",
@@ -1352,7 +1385,13 @@
         "eid": "2-s2.0-85166566795",
         "wosuid": "WOS:001061584300009",
         "issn": "1940-087X"
-      }
+      },
+      "source_put_codes": [
+        139683153,
+        139886711,
+        140576272,
+        158339260
+      ]
     },
     {
       "id": "orcid:177320116",
@@ -1371,11 +1410,14 @@
         "Diogo Trigo"
       ],
       "doi": "10.3791/65452-v",
-      "url": "http://dx.doi.org/10.3791/65452-v",
+      "url": "https://doi.org/10.3791/65452-v",
       "citation": null,
       "external_ids": {
         "doi": "10.3791/65452-v"
-      }
+      },
+      "source_put_codes": [
+        177320116
+      ]
     },
     {
       "id": "orcid:139841662",
@@ -1391,11 +1433,14 @@
         "Vinícius de Paula"
       ],
       "doi": "10.13140/rg.2.2.12420.44162",
-      "url": "http://hdl.handle.net/10773/44285",
+      "url": "https://doi.org/10.13140/rg.2.2.12420.44162",
       "citation": "V. de Paula, Recycling of polymers: A case study on poly(ethylene terephthalate) and poly(ethylene 2,5-\nfurandicarboxylate), M.S. thesis, Department of Chemistry, University of Aveiro, Aveiro, Portugal, 2023. DOI: 10.13140/RG.2.2.12420.44162.",
       "external_ids": {
         "doi": "10.13140/rg.2.2.12420.44162"
-      }
+      },
+      "source_put_codes": [
+        139841662
+      ]
     },
     {
       "id": "orcid:179905000",
@@ -1409,13 +1454,16 @@
       "venue": "Universidade de Aveiro Departamento de Química",
       "authors": [],
       "doi": "10.13140/rg.2.2.12420.44162",
-      "url": "http://hdl.handle.net/10773/44285",
+      "url": "https://doi.org/10.13140/rg.2.2.12420.44162",
       "citation": "@phdthesis {\n\ttitle = {Recycling of polymers: a case study on poly(ethylene terephthalate) and poly(ethylene 2,5-furandicarboxylate)},\n\tyear = {2023},\n\tmonth = {jul},\n\turl = {http://hdl.handle.net/10773/44285},\n\tschool = {Universidade de Aveiro Departamento de Química},\n\tdoi = {10.13140/RG.2.2.12420.44162}\n}",
       "external_ids": {
         "doi": "10.13140/rg.2.2.12420.44162",
         "source-work-id": "cv-prod-id-4622875",
         "handle": "http://hdl.handle.net/10773/44285"
-      }
+      },
+      "source_put_codes": [
+        179905000
+      ]
     },
     {
       "id": "orcid:139840785",
@@ -1439,7 +1487,10 @@
       "citation": "J. J. M. Vitória, V. de Paula, O. A. B. da Cruz e Silva, and D. Trigo, “Optimized automated analysis\ncharacterizes alterations to mitochondrial dynamics in retinoid modulation and oxidative stress”, in Re-\nsearch Summit, (July 12–14), Aveiro, Portugal, 2023.",
       "external_ids": {
         "doi": "10.48528/nd5m-mk87"
-      }
+      },
+      "source_put_codes": [
+        139840785
+      ]
     },
     {
       "id": "orcid:139840596",
@@ -1462,7 +1513,10 @@
       "doi": null,
       "url": null,
       "citation": "J. J. M. Vitória, V. de Paula, L. Pinheiro, O. A. B. da Cruz e Silva, and D. Trigo, “Optimized automated analysis characterizes mitochondrial damage due to oxidative stress and rescue via retinoid acid receptor modulation”, in MitoPorto, (May 12–13), Porto, Portugal, 2023.",
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        139840596
+      ]
     },
     {
       "id": "orcid:139840100",
@@ -1487,7 +1541,10 @@
       "citation": "J. J. M. Vitória, V. de Paula, L. Pinheiro, O. A. B. da Cruz e Silva, and D. Trigo, “Optimized automated analysis characterizes mitochondrial damage due to oxidative stress and rescue via retinoid acid receptor modulation”, in iBiMED Symposium, (May 25–26), Aveiro, Portugal, 2023.",
       "external_ids": {
         "doi": "10.48528/ym5m-v564"
-      }
+      },
+      "source_put_codes": [
+        139840100
+      ]
     },
     {
       "id": "orcid:139840329",
@@ -1510,7 +1567,10 @@
       "doi": null,
       "url": null,
       "citation": "D. Trigo, J. J. M. Vitória, V. de Paula, L. Pinheiro, and O. A. B. da Cruz e Silva, “Impaired mitochondrial response to oxidative stress: Differentiating healthy from pathological ageing”, in MitoPorto, (May 12–13), Porto, Portugal, 2023.",
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        139840329
+      ]
     },
     {
       "id": "orcid:139840900",
@@ -1532,56 +1592,10 @@
       "doi": null,
       "url": null,
       "citation": "J. J. M. Vitória, V. de Paula, O. A. B. da Cruz e Silva, and D. Trigo, “Model system to monitor mitochondrial responses in cellular stress situations”, in 2nd Symposium on Alzheimer’s Disease: An Update on Pathology and Therapeutics, (February 10–11), Porto, Portugal, 2023.",
-      "external_ids": {}
-    },
-    {
-      "id": "orcid:140576272",
-      "orcid_put_code": 140576272,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors",
-      "year": 2023,
-      "month": null,
-      "day": null,
-      "venue": "Journal of Visualized Experiments",
-      "authors": [
-        "Vitória, J.J.M.",
-        "de Paula, V.",
-        "da Cruz e Silva, O.A.B.",
-        "Trigo, D."
-      ],
-      "doi": "10.3791/65452",
-      "url": "http://www.scopus.com/inward/record.url?eid=2-s2.0-85166566795&partnerID=MN8TOARS",
-      "citation": "@article{de Paula2023,title = {Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors},journal = {Journal of Visualized Experiments},year = {2023},volume = {2023},number = {197},author = {Vit{\\'o}ria, J.J.M. and de Paula, V. and da Cruz e Silva, O.A.B. and Trigo, D.}}",
-      "external_ids": {
-        "doi": "10.3791/65452",
-        "eid": "2-s2.0-85166566795",
-        "issn": "1940087X"
-      }
-    },
-    {
-      "id": "orcid:158339260",
-      "orcid_put_code": 158339260,
-      "type": "journal-article",
-      "category": "articles",
-      "title": "Optimized Automated Analysis of Live Neuronal Mitochondria Homeostasis Modulation by Isoform-Specific Retinoic Acid Receptors",
-      "year": 2023,
-      "month": null,
-      "day": null,
-      "venue": "Journal of Visualized Experiments",
-      "authors": [
-        "Vitoria, Jose J. M.",
-        "de Paula, Vinicius",
-        "da Cruz e Silva, Odete A. B.",
-        "Trigo, Diogo"
-      ],
-      "doi": "10.3791/65452",
-      "url": "https://publons.com/wos-op/publon/63957293/",
-      "citation": null,
-      "external_ids": {
-        "doi": "10.3791/65452",
-        "wosuid": "WOS:001061584300009"
-      }
+      "external_ids": {},
+      "source_put_codes": [
+        139840900
+      ]
     },
     {
       "id": "orcid:139839821",
@@ -1603,7 +1617,10 @@
       "doi": null,
       "url": null,
       "citation": "J. J. M. Vitória, V. de Paula, O. A. B. da Cruz e Silva, and D. Trigo, “Optimising the automated analysis of live-imaged mitochondria with the MATLAB tool mitometer,” in Spanish & Portuguese Advanced\nOptical Microscopy Meeting, (November 23–25), Salamanca, Spain, 2022.",
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        139839821
+      ]
     },
     {
       "id": "orcid:139839399",
@@ -1624,7 +1641,10 @@
       "doi": null,
       "url": "https://www.researchgate.net/publication/361813608_Lignin_removal_from_eucalyptus_wood_during_the_magnesium-based_acid_sulphite_pulping",
       "citation": "I. S. F. Mendes, V. de Paula, A. Prates, and D. V. Evtyugin, “Lignin removal from eucalyptus wood during the magnesium-based acid sulphite pulping,” in European Workshop on Lignocellulosics and Pulp, (June 27–July 1), Gothemburg, Sweden, 2022.",
-      "external_ids": {}
+      "external_ids": {},
+      "source_put_codes": [
+        139839399
+      ]
     }
   ]
 }
