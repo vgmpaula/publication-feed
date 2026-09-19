@@ -1,12 +1,12 @@
 {
-  "last_updated_utc": "2026-09-03T10:17:16.936829+00:00",
-  "total": 48,
+  "last_updated_utc": "2026-09-19T18:17:12.533772+00:00",
+  "total": 52,
   "by_category": {
     "articles": 6,
     "conference-abstracts": 1,
     "dissemination": 4,
-    "oral-communications": 17,
-    "posters": 19,
+    "oral-communications": 19,
+    "posters": 21,
     "theses": 1
   }
 }
