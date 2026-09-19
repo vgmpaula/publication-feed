@@ -100,12 +100,11 @@
         return article;
       };
 
-      const renderCategory = (key, label, works, index) => {
+      const renderCategory = (key, label, works) => {
         if (!works.length) return;
         const section = element('section', 'pub-section');
         section.id = key;
         const heading = element('div', 'pub-section-heading');
-        heading.append(element('span', 'pub-section-index', `${String(index).padStart(2, '0')} / ${label.toUpperCase()}`));
         const title = element('h2');
         title.append(document.createTextNode(label + ' '), element('em', '', `(${works.length})`));
         heading.append(title);
@@ -139,9 +138,9 @@
             statLink.removeAttribute('href');
             statLink.setAttribute('aria-disabled', 'true');
           }
-          renderCategory(key, label, entries, i + 1);
+          renderCategory(key, label, entries);
         });
-        if (others.length) renderCategory('other', 'Other outputs', others, 7);
+        if (others.length) renderCategory('other', 'Other outputs', others);
         if (!works.length) holder.append(element('p', 'pub-empty', 'No public research outputs are currently listed on ORCID.'));
         const updated = feed.last_updated_utc ? new Date(feed.last_updated_utc) : null;
         const date = updated && !Number.isNaN(updated.getTime()) ? ` · Updated ${updated.toLocaleDateString('en-GB', {day:'numeric',month:'short',year:'numeric'})}` : '';
