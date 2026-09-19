@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import json
+import html
+import unicodedata
 import os
 import re
 import sys
@@ -158,12 +160,12 @@ def contributors(work: dict[str, Any]) -> list[str]:
 
 
 def resolve_url(work: dict[str, Any], identifiers: dict[str, str]) -> str | None:
-    direct_url = safe_value(work.get("url"))
-    if direct_url:
-        return direct_url
     doi = identifiers.get("doi")
     if doi:
         return f"https://doi.org/{doi}"
+    direct_url = safe_value(work.get("url"))
+    if direct_url:
+        return direct_url
     return None
 
 
@@ -218,6 +220,147 @@ def sort_key(record: dict[str, Any]) -> tuple[int, int, int, str]:
     )
 
 
+def normalized_text(value: str | None) -> str:
+    """Conservative comparison key: ignore typography, not substantive words."""
+    text = unicodedata.normalize("NFKD", html.unescape(value or ""))
+    text = "".join(char for char in text if not unicodedata.combining(char))
+    return re.sub(r"[^a-z0-9]+", " ", text.casefold()).strip()
+
+
+def normalized_authors(record: dict[str, Any]) -> tuple[str, ...]:
+    """Ignore author ordering; require the same known names for a conference match."""
+    return tuple(sorted(normalized_text(name) for name in record.get("authors", [])
+                        if normalized_text(name)))
+
+
+def own_doi(work: dict[str, Any]) -> str | None:
+    """Never treat a proceedings-volume ('part-of') DOI as a work DOI."""
+    for identifier in (work.get("external-ids") or {}).get("external-id", []) or []:
+        if (identifier.get("external-id-type") or "").lower() != "doi":
+            continue
+        relation = (identifier.get("external-id-relationship") or "self").lower()
+        if relation in ("self", "version-of"):
+            return normalize_doi(safe_value(identifier.get("external-id-value")))
+    return None
+
+
+def same_work(a: dict[str, Any], b: dict[str, Any]) -> bool:
+    """Merge equivalent representations, never unrelated conference contributions.
+
+    A journal article may be duplicated by two ORCID sources. Other outputs
+    require stricter evidence: matching type, title, venue AND contributors.
+    A conference-wide DOI or conference name alone NEVER defines identity.
+    """
+    if a["category"] != b["category"]:
+        return False
+    if a["type"] != b["type"]:
+        return False
+    title_a, title_b = normalized_text(a.get("title")), normalized_text(b.get("title"))
+    if not title_a or title_a != title_b:
+        # If the same journal article DOI is present, prefer the DOI even if
+        # ORCID sources have slightly different published titles.
+        return (a["type"] == "journal-article" and bool(a.get("_own_doi"))
+                and a.get("_own_doi") == b.get("_own_doi"))
+
+    doi_a, doi_b = a.get("_own_doi"), b.get("_own_doi")
+    if doi_a and doi_b and doi_a != doi_b:
+        return False
+    if a["type"] == "journal-article":
+        if doi_a and doi_a == doi_b:
+            return True
+        # DOI missing from one source: verify title AND compatible year/venue.
+        year_a, year_b = a.get("year"), b.get("year")
+        if year_a and year_b and abs(int(year_a) - int(year_b)) > 1:
+            return False
+        venue_a, venue_b = normalized_text(a.get("venue")), normalized_text(b.get("venue"))
+        return not (venue_a and venue_b and venue_a != venue_b)
+
+    # A poster versus its abstract fails the category/type checks above.
+    # For conferences, identical titles at the same event may STILL be distinct;
+    # only collapse matching contributions with identical known contributors.
+    # Require a title, venue, year and author list on both records.
+    venue_a, venue_b = normalized_text(a.get("venue")), normalized_text(b.get("venue"))
+    authors_a, authors_b = normalized_authors(a), normalized_authors(b)
+    if not (venue_a and venue_b and venue_a == venue_b
+            and a.get("year") and a.get("year") == b.get("year")
+            and authors_a and authors_a == authors_b):
+        return False
+    for part in ("month", "day"):
+        if a.get(part) is not None and b.get(part) is not None and a[part] != b[part]:
+            return False
+    # Only auto-merge conference duplicates when both have a genuine self DOI
+    # OR a complete matching calendar date; no titles-only guessing.
+    return bool(doi_a and doi_a == doi_b) or all(
+        a.get(part) is not None and a[part] == b.get(part)
+        for part in ("month", "day")
+    )
+
+
+def record_quality(record: dict[str, Any]) -> tuple[int, int, int, int, int, int]:
+    """Prefer a fuller metadata record; use ORCID's preferred-source flag as tie-break."""
+    return (
+        int(bool(record.get("_own_doi"))),
+        len(record.get("authors") or []),
+        int(bool(record.get("venue"))),
+        sum(record.get(part) is not None for part in ("year", "month", "day")),
+        int(bool(record.get("citation"))),
+        int(record.get("_preferred", False)),
+    )
+
+
+def collapse_proven_duplicates(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Use complete-link matching to avoid chaining two *different* article DOIs.
+
+    A DOI-free title duplicate must not bridge two independently DOI-identified
+    papers. Ambiguous matches are left visible for manual review.
+    """
+    groups: list[list[dict[str, Any]]] = []
+    # Richer records arrive first so DOI-free versions join their best match.
+    for record in sorted(records, key=record_quality, reverse=True):
+        if record.get("keep_separate"):
+            groups.append([record])
+            continue
+        matches = [group for group in groups
+                   if all(not member.get("keep_separate") and same_work(record, member)
+                          for member in group)]
+        if len(matches) == 1:
+            matches[0].append(record)
+        else:
+            # No match, or more than one credible match: never make a guess.
+            groups.append([record])
+
+    kept, merged = [], []
+    for members in groups:
+        winner = max(members, key=record_quality)
+        # Prefer the fullest data without replacing the winner's chosen title,
+        # institution/event or source-specific URL unnecessarily.
+        for field in ("authors", "venue", "year", "month", "day", "citation", "doi", "url"):
+            if not winner.get(field):
+                for other in sorted(members, key=record_quality, reverse=True):
+                    if other.get(field):
+                        winner[field] = other[field]
+                        break
+        if winner.get("doi"):
+            winner["url"] = f"https://doi.org/{normalize_doi(winner['doi'])}"
+        winner["source_put_codes"] = sorted(
+            {item["orcid_put_code"] for item in members if item.get("orcid_put_code") is not None}
+        )
+        if len(members) > 1:
+            merged.append({
+                "title": winner["title"],
+                "category": winner["category"],
+                "kept_put_code": winner["orcid_put_code"],
+                "merged_put_codes": [item["orcid_put_code"] for item in members
+                                     if item is not winner],
+            })
+        winner.pop("_own_doi", None)
+        winner.pop("_preferred", None)
+        winner.pop("keep_separate", None)
+        kept.append(winner)
+    kept.sort(key=sort_key, reverse=True)
+    return kept, merged
+
+
 def main() -> int:
     config = load_json(CONFIG_PATH)
     raw_overrides = load_json(OVERRIDES_PATH)
@@ -259,9 +402,12 @@ def main() -> int:
             work = api_get(f"/{orcid_id}/work/{put_code}", token)
             record = apply_override(make_record(work), overrides)
             if not record.get("hidden", False):
+                record["_own_doi"] = own_doi(work)
+                record["_preferred"] = summary.get("display-index") in (0, "0")
                 records.append(record)
 
-    records.sort(key=sort_key, reverse=True)
+    fetched_count = len(records)
+    records, merged = collapse_proven_duplicates(records)
 
     counts = Counter(record["category"] for record in records)
 
@@ -270,6 +416,11 @@ def main() -> int:
         "owner_name": config["owner_name"],
         "last_updated_utc": datetime.now(timezone.utc).isoformat(),
         "total": len(records),
+        "deduplication": {
+            "source_records": fetched_count,
+            "merged_source_records": fetched_count - len(records),
+            "merged_groups": merged,
+        },
         "works": records,
     }
 
@@ -289,7 +440,8 @@ def main() -> int:
         encoding="utf-8",
     )
 
-    print(f"Wrote {len(records)} works to {OUTPUT_DIR / 'publications.json'}")
+    print(f"Wrote {len(records)} distinct works from {fetched_count} public ORCID source records ")
+    print(f"Merged {fetched_count - len(records)} source duplicates; details in publications.json > deduplication")
     return 0
 
 

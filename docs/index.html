@@ -23,6 +23,24 @@
     .authors, .details { color: var(--muted); font-size: .94rem; margin-top: .15rem; }
     .venue { font-style: italic; }
     section { scroll-margin-top: 1.5rem; }
+    html { scroll-behavior: smooth; }
+    .back-to-top {
+      position: fixed; right: max(1.2rem, env(safe-area-inset-right));
+      bottom: max(1.2rem, env(safe-area-inset-bottom));
+      width: 3.25rem; height: 3.25rem; border: 0; border-radius: 50%;
+      background: var(--accent); color: white; box-shadow: 0 5px 20px #17313b35;
+      display: grid; place-items: center; cursor: pointer; z-index: 10;
+      opacity: 0; visibility: hidden; transform: translateY(.6rem);
+      transition: opacity .2s, transform .2s, visibility .2s;
+    }
+    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top:hover { background: #0b525b; }
+    .back-to-top:focus-visible { outline: 3px solid #0b525b; outline-offset: 4px; }
+    .back-to-top svg { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .back-to-top { transition: none; }
+    }
     @media(max-width: 650px) { body { padding-top: 2rem; } .stats { grid-template-columns: repeat(2,minmax(0,1fr)); } }
     @media(max-width: 360px) { .stats { grid-template-columns: 1fr; } }
   </style>
@@ -35,6 +53,9 @@
   </header>
   <nav class="stats" id="stats" aria-label="Publication categories"></nav>
   <main id="works"></main>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top" tabindex="-1">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7"/></svg>
+  </button>
   <script>
     // Fixed editorial order. New works never rearrange these sections.
     const categories = [
@@ -62,7 +83,7 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
       const works = Array.isArray(data.works) ? data.works : [];
-      document.getElementById("meta").textContent = `${works.length} public ORCID records · Updated ${data.last_updated_utc ? new Date(data.last_updated_utc).toLocaleDateString() : "not yet synced"}`;
+      document.getElementById("meta").textContent = `${works.length} distinct research outputs · Updated ${data.last_updated_utc ? new Date(data.last_updated_utc).toLocaleDateString() : "not yet synced"}`;
       const stats = document.getElementById("stats");
       const main = document.getElementById("works");
       const addCategory = (key, label, items, withCard = true) => {
@@ -100,6 +121,20 @@
       const others = works.filter(work => !known.has(work.category || "other"));
       if (others.length) addCategory("other", "Other outputs", others, false);
     }
+    const backToTop = document.getElementById("back-to-top");
+    function updateBackToTop() {
+      const visible = window.scrollY > 350;
+      backToTop.classList.toggle("visible", visible);
+      backToTop.tabIndex = visible ? 0 : -1;
+    }
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+      });
+    });
+    updateBackToTop();
     loadPublications().catch(error => {
       document.getElementById("meta").textContent = `Could not load publication data: ${error.message}`;
     });
