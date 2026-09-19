@@ -3,141 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vinícius de Paula — Publications</title>
-  <style>
-    :root { color-scheme: light; --ink: #172c39; --muted: #627482; --line: #e0e8eb; --accent: #116d77; }
-    * { box-sizing: border-box; }
-    body { max-width: 1080px; margin: 0 auto; padding: 3.5rem 1.4rem; font: 16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif; color: var(--ink); background: #f8fafb; }
-    h1 { font-size: clamp(2rem,5vw,3.4rem); letter-spacing: -.045em; line-height: 1.1; margin: .3rem 0 .6rem; }
-    h2 { font-size: 1.65rem; letter-spacing: -.025em; margin: 3rem 0 1rem; }
-    a { color: var(--accent); }
-    .eyebrow { text-transform: uppercase; letter-spacing: .18em; color: var(--accent); font-size: .76rem; font-weight: 750; }
-    .meta { color: var(--muted); margin-bottom: 2rem; }
-    .stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .8rem; margin: 2rem 0 3.1rem; }
-    .stat { padding: 1.3rem 1.1rem; border: 1px solid var(--line); border-radius: 16px; background: white; text-decoration: none; color: inherit; box-shadow: 0 4px 16px #17313b08; transition: transform .15s,border-color .15s; }
-    .stat:hover, .stat:focus-visible { transform: translateY(-2px); border-color: var(--accent); }
-    .stat-number { display: block; font-size: clamp(1.8rem,4vw,2.6rem); font-weight: 750; line-height: 1.1; letter-spacing: -.05em; color: var(--accent); }
-    .stat-label { display: block; margin-top: .5rem; color: var(--muted); font-size: .87rem; font-weight: 650; }
-    .work { padding: 1.15rem 0; border-top: 1px solid var(--line); }
-    .work-title { font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    .authors, .details { color: var(--muted); font-size: .94rem; margin-top: .15rem; }
-    .venue { font-style: italic; }
-    section { scroll-margin-top: 1.5rem; }
-    html { scroll-behavior: smooth; }
-    .back-to-top {
-      position: fixed; right: max(1.2rem, env(safe-area-inset-right));
-      bottom: max(1.2rem, env(safe-area-inset-bottom));
-      width: 3.25rem; height: 3.25rem; border: 0; border-radius: 50%;
-      background: var(--accent); color: white; box-shadow: 0 5px 20px #17313b35;
-      display: grid; place-items: center; cursor: pointer; z-index: 10;
-      opacity: 0; visibility: hidden; transform: translateY(.6rem);
-      transition: opacity .2s, transform .2s, visibility .2s;
-    }
-    .back-to-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    .back-to-top:hover { background: #0b525b; }
-    .back-to-top:focus-visible { outline: 3px solid #0b525b; outline-offset: 4px; }
-    .back-to-top svg { width: 1.5rem; height: 1.5rem; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .back-to-top { transition: none; }
-    }
-    @media(max-width: 650px) { body { padding-top: 2rem; } .stats { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-    @media(max-width: 360px) { .stats { grid-template-columns: 1fr; } }
-  </style>
+  <meta name="description" content="Publications and research contributions of Vinícius de Paula, automatically updated from ORCID.">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta property="og:title" content="Publications & contributions | Vinícius de Paula">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vgmpaula.github.io/publication-feed/">
+  <title>Publications & contributions — Vinícius de Paula</title>
+  <!-- Use the SAME shared assets as the homepage: one visual identity, two pages. -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="assets/site-v3.css">
+  <script src="assets/publication-page.js" defer></script>
+  <link rel="stylesheet" href="assets/publication-page.css">
 </head>
-<body>
-  <header>
-    <span class="eyebrow">Research outputs</span>
-    <h1>Publications &amp; contributions</h1>
-    <p class="meta" id="meta">Loading publication record…</p>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="/" aria-label="Vinícius de Paula — home">
+        <span class="wordmark-sign" aria-hidden="true">V<span class="wordmark-dot">·</span></span>
+        <span class="wordmark-name">Vinícius <strong>de Paula</strong></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="/#about">About</a>
+        <a href="/#research">Research</a>
+        <a href="/publication-feed/" aria-current="page">Publications</a>
+        <a href="/#values">Values</a>
+        <a class="nav-contact" href="/#contact">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
   </header>
-  <nav class="stats" id="stats" aria-label="Publication categories"></nav>
-  <main id="works"></main>
-  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top" tabindex="-1">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7"/></svg>
-  </button>
-  <script>
-    // Fixed editorial order. New works never rearrange these sections.
-    const categories = [
-      ["articles", "Articles"],
-      ["conference-abstracts", "Conference proceedings"],
-      ["oral-communications", "Oral communications"],
-      ["posters", "Posters"],
-      ["dissemination", "Dissemination"],
-      ["theses", "Theses"]
-    ];
-    const cleanText = (value) => value == null ? "" : String(value);
-    const textElement = (tag, text, className) => {
-      const el = document.createElement(tag);
-      el.textContent = cleanText(text);
-      if (className) el.className = className;
-      return el;
-    };
-    const safeUrl = (url) => {
-      if (!url) return null;
-      try { const parsed = new URL(url); return ["https:", "http:"].includes(parsed.protocol) ? parsed.href : null; }
-      catch { return null; }
-    };
-    async function loadPublications() {
-      const response = await fetch("./publications.json", { cache: "no-store" });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const data = await response.json();
-      const works = Array.isArray(data.works) ? data.works : [];
-      document.getElementById("meta").textContent = `${works.length} distinct research outputs · Updated ${data.last_updated_utc ? new Date(data.last_updated_utc).toLocaleDateString() : "not yet synced"}`;
-      const stats = document.getElementById("stats");
-      const main = document.getElementById("works");
-      const addCategory = (key, label, items, withCard = true) => {
-        if (withCard) {
-          const link = document.createElement("a");
-          link.className = "stat";
-          link.href = `#${key}`;
-          link.append(textElement("span", items.length, "stat-number"), textElement("span", label, "stat-label"));
-          stats.append(link);
-        }
-        if (!items.length) return;
-        const section = document.createElement("section");
-        section.id = key;
-        section.append(textElement("h2", label));
-        items.forEach(work => {
-          const article = document.createElement("article");
-          article.className = "work";
-          const url = safeUrl(work.url);
-          const title = textElement(url ? "a" : "span", work.title || "Untitled work", "work-title");
-          if (url) { title.href = url; title.target = "_blank"; title.rel = "noopener noreferrer"; }
-          article.append(title);
-          if (Array.isArray(work.authors) && work.authors.length) article.append(textElement("div", work.authors.join(", "), "authors"));
-          const details = document.createElement("div");
-          details.className = "details";
-          if (work.venue) details.append(textElement("span", work.venue, "venue"));
-          if (work.year) details.append(textElement("span", `${work.venue ? " · " : ""}${work.year}`));
-          if (work.doi) details.append(textElement("span", ` · DOI: ${work.doi}`));
-          article.append(details);
-          section.append(article);
-        });
-        main.append(section);
-      };
-      const known = new Set(categories.map(([key]) => key));
-      categories.forEach(([key, label]) => addCategory(key, label, works.filter(work => (work.category || "other") === key)));
-      const others = works.filter(work => !known.has(work.category || "other"));
-      if (others.length) addCategory("other", "Other outputs", others, false);
-    }
-    const backToTop = document.getElementById("back-to-top");
-    function updateBackToTop() {
-      const visible = window.scrollY > 350;
-      backToTop.classList.toggle("visible", visible);
-      backToTop.tabIndex = visible ? 0 : -1;
-    }
-    window.addEventListener("scroll", updateBackToTop, { passive: true });
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
-      });
-    });
-    updateBackToTop();
-    loadPublications().catch(error => {
-      document.getElementById("meta").textContent = `Could not load publication data: ${error.message}`;
-    });
-  </script>
+  <main id="main">
+    <section class="pub-intro" aria-labelledby="pub-title">
+      <div class="shell">
+        <a class="pub-breadcrumb" href="/">← &nbsp; Back to the homepage</a>
+        <div class="pub-intro-layout">
+          <div>
+            <p class="pub-kicker">03 / PUBLICATIONS</p>
+            <h1 id="pub-title" class="pub-title">Publications &amp;<br><em>contributions.</em></h1>
+          </div>
+          <p class="pub-intro-copy">Research outputs, from peer-reviewed articles to the conversations that bring science into the world. Synchronized with <a href="https://orcid.org/0000-0002-8255-9494" target="_blank" rel="noopener noreferrer">my public ORCID record</a>.</p>
+        </div>
+      </div>
+    </section>
+    <section class="pub-summary" aria-label="Publication category overview">
+      <div class="shell">
+        <div class="pub-summary-top">
+          <p class="eyebrow">The record at a glance</p>
+          <p class="pub-feed-status" id="pub-feed-status" role="status" aria-live="polite">Loading the latest publication record…</p>
+        </div>
+        <nav class="pub-stats" id="pub-stats" aria-label="Jump to a publication category">
+          <a class="pub-stat" href="#articles"><span class="pub-stat-num" data-category-count="articles">—</span><span class="pub-stat-label">Articles <span class="pub-stat-arrow" aria-hidden="true">↗</span></span></a>
+          <a class="pub-stat" href="#conference-abstracts"><span class="pub-stat-num" data-category-count="conference-abstracts">—</span><span class="pub-stat-label">Conference proceedings <span class="pub-stat-arrow" aria-hidden="true">↗</span></span></a>
+          <a class="pub-stat" href="#oral-communications"><span class="pub-stat-num" data-category-count="oral-communications">—</span><span class="pub-stat-label">Oral communications <span class="pub-stat-arrow" aria-hidden="true">↗</span></span></a>
+          <a class="pub-stat" href="#posters"><span class="pub-stat-num" data-category-count="posters">—</span><span class="pub-stat-label">Posters <span class="pub-stat-arrow" aria-hidden="true">↗</span></span></a>
+          <a class="pub-stat" href="#dissemination"><span class="pub-stat-num" data-category-count="dissemination">—</span><span class="pub-stat-label">Dissemination <span class="pub-stat-arrow" aria-hidden="true">↗</span></span></a>
+          <a class="pub-stat" href="#theses"><span class="pub-stat-num" data-category-count="theses">—</span><span class="pub-stat-label">Theses <span class="pub-stat-arrow" aria-hidden="true">↗</span></span></a>
+        </nav>
+      </div>
+    </section>
+    <section class="pub-results" aria-label="Full publication record">
+      <div class="shell" id="pub-records">
+        <p class="pub-empty" id="pub-loading">Your publication record is loading from ORCID…</p>
+        <noscript><p class="pub-empty">Please enable JavaScript to display the publication list, or <a href="https://orcid.org/0000-0002-8255-9494">view the record directly on ORCID</a>.</p></noscript>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><span class="footer-wordmark">V<span aria-hidden="true">·</span> de Paula</span><span>Made between the lab bench and the blank page.</span><span>© <span id="year">2026</span> Vinícius de Paula</span></div></footer>
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
 </body>
 </html>
