@@ -156,17 +156,14 @@ def contributors(work: dict[str, Any]) -> list[str]:
             names.append(name)
     return names
 
+
 def resolve_url(work: dict[str, Any], identifiers: dict[str, str]) -> str | None:
-    doi = identifiers.get("doi")
-
-    if doi:
-        return f"https://doi.org/{doi}"
-
     direct_url = safe_value(work.get("url"))
-
     if direct_url:
         return direct_url
-
+    doi = identifiers.get("doi")
+    if doi:
+        return f"https://doi.org/{doi}"
     return None
 
 
@@ -182,7 +179,7 @@ def make_record(work: dict[str, Any]) -> dict[str, Any]:
     work_type = (work.get("type") or "other").lower()
 
     return {
-        "id": identifiers.get("doi") or f"orcid:{work.get('put-code')}",
+        "id": f"orcid:{work.get('put-code')}",
         "orcid_put_code": work.get("put-code"),
         "type": work_type,
         "category": TYPE_TO_CATEGORY.get(work_type, "other"),
@@ -246,34 +243,26 @@ def main() -> int:
     works_summary = api_get(f"/{orcid_id}/works", token)
     records: list[dict[str, Any]] = []
 
+    # ORCID's groups may contain multiple distinct public records. Never collapse
+    # works by conference, DOI, title, or ORCID group. Each put code is a record.
+    # Private records are not retrievable using a public API token.
     for group in works_summary.get("group", []) or []:
-        summary = choose_summary(group)
-        if not summary:
-            continue
+        for summary in group.get("work-summary", []) or []:
+            if (summary.get("visibility") or "PUBLIC").upper() != "PUBLIC":
+                continue
+            work_type = (summary.get("type") or "").lower()
+            if included_types and work_type not in included_types:
+                continue
+            put_code = summary.get("put-code")
+            if put_code is None:
+                continue
+            work = api_get(f"/{orcid_id}/work/{put_code}", token)
+            record = apply_override(make_record(work), overrides)
+            if not record.get("hidden", False):
+                records.append(record)
 
-        work_type = (summary.get("type") or "").lower()
-        if included_types and work_type not in included_types:
-            continue
+    records.sort(key=sort_key, reverse=True)
 
-        put_code = summary.get("put-code")
-        if put_code is None:
-            continue
-
-        work = api_get(f"/{orcid_id}/work/{put_code}", token)
-        record = apply_override(make_record(work), overrides)
-
-        if not record.get("hidden", False):
-            records.append(record)
-
-    # A final DOI-level safeguard in case malformed grouping ever leaks duplicates.
-    deduplicated: dict[str, dict[str, Any]] = {}
-    for record in records:
-        key = record["id"]
-        previous = deduplicated.get(key)
-        if previous is None or sort_key(record) > sort_key(previous):
-            deduplicated[key] = record
-
-    records = sorted(deduplicated.values(), key=sort_key, reverse=True)
     counts = Counter(record["category"] for record in records)
 
     payload = {

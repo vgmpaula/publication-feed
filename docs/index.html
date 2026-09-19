@@ -3,65 +3,103 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vinícius de Paula — Publication Feed Preview</title>
+  <title>Vinícius de Paula — Publications</title>
   <style>
-    body { max-width: 900px; margin: 3rem auto; padding: 0 1.25rem; font-family: system-ui, sans-serif; line-height: 1.5; }
-    h1 { margin-bottom: .25rem; }
-    .meta { opacity: .7; margin-bottom: 2rem; }
-    .work { padding: 1rem 0; border-top: 1px solid #ddd; }
-    .title { font-weight: 700; }
+    :root { color-scheme: light; --ink: #172c39; --muted: #627482; --line: #e0e8eb; --accent: #116d77; }
+    * { box-sizing: border-box; }
+    body { max-width: 1080px; margin: 0 auto; padding: 3.5rem 1.4rem; font: 16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif; color: var(--ink); background: #f8fafb; }
+    h1 { font-size: clamp(2rem,5vw,3.4rem); letter-spacing: -.045em; line-height: 1.1; margin: .3rem 0 .6rem; }
+    h2 { font-size: 1.65rem; letter-spacing: -.025em; margin: 3rem 0 1rem; }
+    a { color: var(--accent); }
+    .eyebrow { text-transform: uppercase; letter-spacing: .18em; color: var(--accent); font-size: .76rem; font-weight: 750; }
+    .meta { color: var(--muted); margin-bottom: 2rem; }
+    .stats { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .8rem; margin: 2rem 0 3.1rem; }
+    .stat { padding: 1.3rem 1.1rem; border: 1px solid var(--line); border-radius: 16px; background: white; text-decoration: none; color: inherit; box-shadow: 0 4px 16px #17313b08; transition: transform .15s,border-color .15s; }
+    .stat:hover, .stat:focus-visible { transform: translateY(-2px); border-color: var(--accent); }
+    .stat-number { display: block; font-size: clamp(1.8rem,4vw,2.6rem); font-weight: 750; line-height: 1.1; letter-spacing: -.05em; color: var(--accent); }
+    .stat-label { display: block; margin-top: .5rem; color: var(--muted); font-size: .87rem; font-weight: 650; }
+    .work { padding: 1.15rem 0; border-top: 1px solid var(--line); }
+    .work-title { font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .authors, .details { color: var(--muted); font-size: .94rem; margin-top: .15rem; }
     .venue { font-style: italic; }
-    code { background: #f3f3f3; padding: .15rem .35rem; border-radius: .25rem; }
+    section { scroll-margin-top: 1.5rem; }
+    @media(max-width: 650px) { body { padding-top: 2rem; } .stats { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media(max-width: 360px) { .stats { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
-  <h1>Publication feed preview</h1>
-  <p class="meta" id="meta">Loading <code>publications.json</code>…</p>
+  <header>
+    <span class="eyebrow">Research outputs</span>
+    <h1>Publications &amp; contributions</h1>
+    <p class="meta" id="meta">Loading publication record…</p>
+  </header>
+  <nav class="stats" id="stats" aria-label="Publication categories"></nav>
   <main id="works"></main>
-
   <script>
-    const labels = {
-      "articles": "Articles",
-      "oral-communications": "Oral communications",
-      "posters": "Posters",
-      "conference-abstracts": "Conference abstracts / outputs",
-      "theses": "Theses",
-      "dissemination": "Dissemination",
-      "other": "Other"
+    // Fixed editorial order. New works never rearrange these sections.
+    const categories = [
+      ["articles", "Articles"],
+      ["conference-abstracts", "Conference proceedings"],
+      ["oral-communications", "Oral communications"],
+      ["posters", "Posters"],
+      ["dissemination", "Dissemination"],
+      ["theses", "Theses"]
+    ];
+    const cleanText = (value) => value == null ? "" : String(value);
+    const textElement = (tag, text, className) => {
+      const el = document.createElement(tag);
+      el.textContent = cleanText(text);
+      if (className) el.className = className;
+      return el;
     };
-
+    const safeUrl = (url) => {
+      if (!url) return null;
+      try { const parsed = new URL(url); return ["https:", "http:"].includes(parsed.protocol) ? parsed.href : null; }
+      catch { return null; }
+    };
     async function loadPublications() {
       const response = await fetch("./publications.json", { cache: "no-store" });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const data = await response.json();
-
-      document.getElementById("meta").textContent =
-        `${data.total} ORCID works • ${data.owner_name} • updated ${data.last_updated_utc || "not yet synced"}`;
-
-      const grouped = Object.groupBy(data.works, work => work.category || "other");
-      const container = document.getElementById("works");
-
-      for (const [category, works] of Object.entries(grouped)) {
+      const works = Array.isArray(data.works) ? data.works : [];
+      document.getElementById("meta").textContent = `${works.length} public ORCID records · Updated ${data.last_updated_utc ? new Date(data.last_updated_utc).toLocaleDateString() : "not yet synced"}`;
+      const stats = document.getElementById("stats");
+      const main = document.getElementById("works");
+      const addCategory = (key, label, items, withCard = true) => {
+        if (withCard) {
+          const link = document.createElement("a");
+          link.className = "stat";
+          link.href = `#${key}`;
+          link.append(textElement("span", items.length, "stat-number"), textElement("span", label, "stat-label"));
+          stats.append(link);
+        }
+        if (!items.length) return;
         const section = document.createElement("section");
-        section.innerHTML = `<h2>${labels[category] || category}</h2>`;
-
-        for (const work of works) {
+        section.id = key;
+        section.append(textElement("h2", label));
+        items.forEach(work => {
           const article = document.createElement("article");
           article.className = "work";
-          const title = work.url
-            ? `<a class="title" href="${work.url}">${work.title}</a>`
-            : `<span class="title">${work.title}</span>`;
-          const authors = work.authors?.length ? `<div>${work.authors.join(", ")}</div>` : "";
-          const venue = work.venue ? `<span class="venue">${work.venue}</span>` : "";
-          const year = work.year ? ` (${work.year})` : "";
-          const doi = work.doi ? `<div>DOI: ${work.doi}</div>` : "";
-          article.innerHTML = `${title}${authors}<div>${venue}${year}</div>${doi}`;
-          section.appendChild(article);
-        }
-        container.appendChild(section);
-      }
+          const url = safeUrl(work.url);
+          const title = textElement(url ? "a" : "span", work.title || "Untitled work", "work-title");
+          if (url) { title.href = url; title.target = "_blank"; title.rel = "noopener noreferrer"; }
+          article.append(title);
+          if (Array.isArray(work.authors) && work.authors.length) article.append(textElement("div", work.authors.join(", "), "authors"));
+          const details = document.createElement("div");
+          details.className = "details";
+          if (work.venue) details.append(textElement("span", work.venue, "venue"));
+          if (work.year) details.append(textElement("span", `${work.venue ? " · " : ""}${work.year}`));
+          if (work.doi) details.append(textElement("span", ` · DOI: ${work.doi}`));
+          article.append(details);
+          section.append(article);
+        });
+        main.append(section);
+      };
+      const known = new Set(categories.map(([key]) => key));
+      categories.forEach(([key, label]) => addCategory(key, label, works.filter(work => (work.category || "other") === key)));
+      const others = works.filter(work => !known.has(work.category || "other"));
+      if (others.length) addCategory("other", "Other outputs", others, false);
     }
-
     loadPublications().catch(error => {
       document.getElementById("meta").textContent = `Could not load publication data: ${error.message}`;
     });
