@@ -221,227 +221,193 @@ def sort_key(record: dict[str, Any]) -> tuple[int, int, int, str]:
 
 
 def normalized_text(value: str | None) -> str:
-    """Conservative comparison key: ignore typography, not substantive words."""
+    """Ignore minor punctuation and accent differences in the *same ORCID group*."""
     text = unicodedata.normalize("NFKD", html.unescape(value or ""))
     text = "".join(char for char in text if not unicodedata.combining(char))
     return re.sub(r"[^a-z0-9]+", " ", text.casefold()).strip()
 
 
-def normalized_authors(record: dict[str, Any]) -> tuple[str, ...]:
-    """Ignore author ordering; require the same known names for a conference match."""
-    return tuple(sorted(normalized_text(name) for name in record.get("authors", [])
-                        if normalized_text(name)))
-
-
 def own_doi(work: dict[str, Any]) -> str | None:
-    """Never treat a proceedings-volume ('part-of') DOI as a work DOI."""
+    """'Part-of' identifiers describe collections, not individual contributions."""
     for identifier in (work.get("external-ids") or {}).get("external-id", []) or []:
-        if (identifier.get("external-id-type") or "").lower() != "doi":
-            continue
-        relation = (identifier.get("external-id-relationship") or "self").lower()
-        if relation in ("self", "version-of"):
+        if (identifier.get("external-id-type") or "").lower() == "doi" and (
+                identifier.get("external-id-relationship") or "self").lower() in {"self", "version-of"}:
             return normalize_doi(safe_value(identifier.get("external-id-value")))
     return None
 
 
-def same_work(a: dict[str, Any], b: dict[str, Any]) -> bool:
-    """Merge equivalent representations, never unrelated conference contributions.
+def is_public(summary: dict[str, Any]) -> bool:
+    return (summary.get("visibility") or "PUBLIC").upper() == "PUBLIC"
 
-    A journal article may be duplicated by two ORCID sources. Other outputs
-    require stricter evidence: matching type, title, venue AND contributors.
-    A conference-wide DOI or conference name alone NEVER defines identity.
+
+def preferred_score(summary: dict[str, Any]) -> tuple[int, int, int]:
+    """ORCID uses the HIGHEST display index as the user's preferred source."""
+    try:
+        display_index = int(summary.get("display-index") or 0)
+    except (TypeError, ValueError):
+        display_index = 0
+    return (display_index, *metadata_score(summary))
+
+
+def same_contribution_within_group(a: dict[str, Any], b: dict[str, Any]) -> bool:
+    """Treat two SOURCE VERSIONS as one only within their ORCID group.
+
+    A conference-wide DOI or event name must never merge distinct titles or
+    poster/paper/oral categories. There is NO matching across ORCID groups.
     """
     if a["category"] != b["category"]:
         return False
-    if a["type"] != b["type"]:
+    if a.get("keep_separate") or b.get("keep_separate"):
         return False
-    title_a, title_b = normalized_text(a.get("title")), normalized_text(b.get("title"))
-    if not title_a or title_a != title_b:
-        # If the same journal article DOI is present, prefer the DOI even if
-        # ORCID sources have slightly different published titles.
-        return (a["type"] == "journal-article" and bool(a.get("_own_doi"))
-                and a.get("_own_doi") == b.get("_own_doi"))
-
-    doi_a, doi_b = a.get("_own_doi"), b.get("_own_doi")
-    if doi_a and doi_b and doi_a != doi_b:
-        return False
-    if a["type"] == "journal-article":
-        if doi_a and doi_a == doi_b:
-            return True
-        # DOI missing from one source: verify title AND compatible year/venue.
-        year_a, year_b = a.get("year"), b.get("year")
-        if year_a and year_b and abs(int(year_a) - int(year_b)) > 1:
+    # ORCID groups of articles are typically different sources for one article;
+    # preserve separately identified journal articles if each has a different
+    # work-level DOI and a different title.
+    if a["category"] == "articles":
+        doi_a, doi_b = a.get("_own_doi"), b.get("_own_doi")
+        if doi_a and doi_b and doi_a != doi_b:
             return False
+        return True
+    if normalized_text(a.get("title")) != normalized_text(b.get("title")):
+        return False
+    # The same talk/poster can be given at distinct events. Keep the two when
+    # the *known* event names unambiguously differ.
+    if a["category"] in {"posters", "oral-communications"}:
         venue_a, venue_b = normalized_text(a.get("venue")), normalized_text(b.get("venue"))
-        return not (venue_a and venue_b and venue_a != venue_b)
-
-    # A poster versus its abstract fails the category/type checks above.
-    # For conferences, identical titles at the same event may STILL be distinct;
-    # only collapse matching contributions with identical known contributors.
-    # Require a title, venue, year and author list on both records.
-    venue_a, venue_b = normalized_text(a.get("venue")), normalized_text(b.get("venue"))
-    authors_a, authors_b = normalized_authors(a), normalized_authors(b)
-    if not (venue_a and venue_b and venue_a == venue_b
-            and a.get("year") and a.get("year") == b.get("year")
-            and authors_a and authors_a == authors_b):
-        return False
-    for part in ("month", "day"):
-        if a.get(part) is not None and b.get(part) is not None and a[part] != b[part]:
+        if venue_a and venue_b and venue_a != venue_b:
             return False
-    # Only auto-merge conference duplicates when both have a genuine self DOI
-    # OR a complete matching calendar date; no titles-only guessing.
-    return bool(doi_a and doi_a == doi_b) or all(
-        a.get(part) is not None and a[part] == b.get(part)
-        for part in ("month", "day")
-    )
+    return True
 
 
-def record_quality(record: dict[str, Any]) -> tuple[int, int, int, int, int, int]:
-    """Prefer a fuller metadata record; use ORCID's preferred-source flag as tie-break."""
-    return (
-        int(bool(record.get("_own_doi"))),
-        len(record.get("authors") or []),
-        int(bool(record.get("venue"))),
-        sum(record.get(part) is not None for part in ("year", "month", "day")),
-        int(bool(record.get("citation"))),
-        int(record.get("_preferred", False)),
-    )
+CONFIG_ORCID_ID: str = ""
 
 
-def collapse_proven_duplicates(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    """Use complete-link matching to avoid chaining two *different* article DOIs.
+def select_orcid_works(works_summary: dict[str, Any], token: str,
+                       included_types: set[str], overrides: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """One ORCID preferred record per work, except distinct contributions in a group."""
+    output: list[dict[str, Any]] = []
+    group_count = 0
+    public_versions = 0
+    skipped_types: Counter[str] = Counter()
+    excluded_by_override = 0
+    grouped_versions: list[dict[str, Any]] = []
 
-    A DOI-free title duplicate must not bridge two independently DOI-identified
-    papers. Ambiguous matches are left visible for manual review.
-    """
-    groups: list[list[dict[str, Any]]] = []
-    # Richer records arrive first so DOI-free versions join their best match.
-    for record in sorted(records, key=record_quality, reverse=True):
-        if record.get("keep_separate"):
-            groups.append([record])
-            continue
-        matches = [group for group in groups
-                   if all(not member.get("keep_separate") and same_work(record, member)
-                          for member in group)]
-        if len(matches) == 1:
-            matches[0].append(record)
-        else:
-            # No match, or more than one credible match: never make a guess.
-            groups.append([record])
-
-    kept, merged = [], []
-    for members in groups:
-        winner = max(members, key=record_quality)
-        # Prefer the fullest data without replacing the winner's chosen title,
-        # institution/event or source-specific URL unnecessarily.
-        for field in ("authors", "venue", "year", "month", "day", "citation", "doi", "url"):
-            if not winner.get(field):
-                for other in sorted(members, key=record_quality, reverse=True):
-                    if other.get(field):
-                        winner[field] = other[field]
-                        break
-        if winner.get("doi"):
-            winner["url"] = f"https://doi.org/{normalize_doi(winner['doi'])}"
-        winner["source_put_codes"] = sorted(
-            {item["orcid_put_code"] for item in members if item.get("orcid_put_code") is not None}
-        )
-        if len(members) > 1:
-            merged.append({
-                "title": winner["title"],
-                "category": winner["category"],
-                "kept_put_code": winner["orcid_put_code"],
-                "merged_put_codes": [item["orcid_put_code"] for item in members
-                                     if item is not winner],
-            })
-        winner.pop("_own_doi", None)
-        winner.pop("_preferred", None)
-        winner.pop("keep_separate", None)
-        kept.append(winner)
-    kept.sort(key=sort_key, reverse=True)
-    return kept, merged
-
-
-def main() -> int:
-    config = load_json(CONFIG_PATH)
-    raw_overrides = load_json(OVERRIDES_PATH)
-    overrides = {
-        key: value
-        for key, value in raw_overrides.items()
-        if not key.startswith("_")
-    }
-
-    client_id = os.getenv("ORCID_CLIENT_ID")
-    client_secret = os.getenv("ORCID_CLIENT_SECRET")
-    if not client_id or not client_secret:
-        print(
-            "Missing ORCID_CLIENT_ID or ORCID_CLIENT_SECRET environment variables.",
-            file=sys.stderr,
-        )
-        return 2
-
-    token = get_token(client_id, client_secret)
-    orcid_id = config["orcid_id"]
-    included_types = {item.lower() for item in config.get("included_types", [])}
-
-    works_summary = api_get(f"/{orcid_id}/works", token)
-    records: list[dict[str, Any]] = []
-
-    # ORCID's groups may contain multiple distinct public records. Never collapse
-    # works by conference, DOI, title, or ORCID group. Each put code is a record.
-    # Private records are not retrievable using a public API token.
     for group in works_summary.get("group", []) or []:
-        for summary in group.get("work-summary", []) or []:
-            if (summary.get("visibility") or "PUBLIC").upper() != "PUBLIC":
-                continue
+        all_summaries = [s for s in (group.get("work-summary") or []) if is_public(s)]
+        if not all_summaries:
+            continue
+        group_count += 1
+        public_versions += len(all_summaries)
+        candidates: list[tuple[dict[str, Any], dict[str, Any]]] = []
+        for summary in all_summaries:
             work_type = (summary.get("type") or "").lower()
             if included_types and work_type not in included_types:
+                skipped_types[work_type or "unknown"] += 1
                 continue
             put_code = summary.get("put-code")
             if put_code is None:
                 continue
-            work = api_get(f"/{orcid_id}/work/{put_code}", token)
+            # Do not silently convert an unsuccessful request into a deletion.
+            work = api_get(f"/{CONFIG_ORCID_ID}/work/{put_code}", token)
             record = apply_override(make_record(work), overrides)
-            if not record.get("hidden", False):
-                record["_own_doi"] = own_doi(work)
-                record["_preferred"] = summary.get("display-index") in (0, "0")
-                records.append(record)
+            if record.get("hidden", False):
+                excluded_by_override += 1
+                continue
+            record["_own_doi"] = own_doi(work)
+            candidates.append((summary, record))
 
-    fetched_count = len(records)
-    records, merged = collapse_proven_duplicates(records)
+        # ORCID's preferred source decides which version represents an output.
+        # All sources are examined so distinct posters/abstracts in an
+        # accidentally shared group are not discarded.
+        bundles: list[list[tuple[dict[str, Any], dict[str, Any]]]] = []
+        for entry in candidates:
+            matches = [bundle for bundle in bundles if all(
+                same_contribution_within_group(entry[1], member[1]) for member in bundle
+            )]
+            if len(matches) == 1:
+                matches[0].append(entry)
+            else:
+                bundles.append([entry])
 
+        for bundle in bundles:
+            selected_summary, winner = max(bundle, key=lambda entry: preferred_score(entry[0]))
+            winner["source_put_codes"] = sorted({
+                int(item[1]["orcid_put_code"]) for item in bundle
+                if item[1].get("orcid_put_code") is not None
+            })
+            winner.pop("_own_doi", None)
+            winner.pop("keep_separate", None)
+            output.append(winner)
+            if len(bundle) > 1:
+                grouped_versions.append({
+                    "title": winner["title"],
+                    "category": winner["category"],
+                    "preferred_put_code": winner["orcid_put_code"],
+                    "source_put_codes": winner["source_put_codes"],
+                })
+
+    output.sort(key=sort_key, reverse=True)
+    audit = {
+        "orcid_public_groups": group_count,
+        "orcid_public_source_versions": public_versions,
+        "displayed_outputs": len(output),
+        "grouped_source_versions": grouped_versions,
+        "skipped_work_types": dict(sorted(skipped_types.items())),
+        "hidden_by_overrides": excluded_by_override,
+        "note": "ORCID groups can contain several source versions, or occasionally distinct poster/abstract contributions. The website rebuilds from ORCID at every successful sync.",
+    }
+    return output, audit
+
+
+def main() -> int:
+    global CONFIG_ORCID_ID
+    config = load_json(CONFIG_PATH)
+    overrides_data = load_json(OVERRIDES_PATH)
+    overrides = {k: v for k, v in overrides_data.items() if not k.startswith("_")}
+    client_id, client_secret = os.getenv("ORCID_CLIENT_ID"), os.getenv("ORCID_CLIENT_SECRET")
+    if not client_id or not client_secret:
+        print("Missing ORCID_CLIENT_ID or ORCID_CLIENT_SECRET", file=sys.stderr)
+        return 2
+
+    CONFIG_ORCID_ID = config["orcid_id"]
+    token = get_token(client_id, client_secret)
+    groups = api_get(f"/{CONFIG_ORCID_ID}/works", token)
+    if not isinstance(groups.get("group"), list):
+        raise RuntimeError("ORCID did not return a valid groups list; leaving existing files unchanged.")
+    included_types = {item.lower() for item in config.get("included_types", [])}
+    records, audit = select_orcid_works(groups, token, included_types, overrides)
+    # Guard against a transient empty API response wiping a populated website.
+    old_path = OUTPUT_DIR / "publications.json"
+    if not records and old_path.exists():
+        previous = load_json(old_path)
+        if previous.get("works"):
+            raise RuntimeError("ORCID returned no eligible works; refusing to overwrite a populated feed.")
     counts = Counter(record["category"] for record in records)
-
+    updated_at = datetime.now(timezone.utc).isoformat()
     payload = {
-        "orcid_id": orcid_id,
+        "orcid_id": CONFIG_ORCID_ID,
         "owner_name": config["owner_name"],
-        "last_updated_utc": datetime.now(timezone.utc).isoformat(),
+        "last_updated_utc": updated_at,
         "total": len(records),
-        "deduplication": {
-            "source_records": fetched_count,
-            "merged_source_records": fetched_count - len(records),
-            "merged_groups": merged,
-        },
+        "orcid_sync": audit,
         "works": records,
     }
-
-    counts_payload = {
-        "last_updated_utc": payload["last_updated_utc"],
+    count_payload = {
+        "last_updated_utc": updated_at,
         "total": len(records),
         "by_category": dict(sorted(counts.items())),
     }
-
+    # Both JSON files are generated completely in memory before replacement.
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    (OUTPUT_DIR / "publications.json").write_text(
-        json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
-    (OUTPUT_DIR / "counts.json").write_text(
-        json.dumps(counts_payload, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
-
-    print(f"Wrote {len(records)} distinct works from {fetched_count} public ORCID source records ")
-    print(f"Merged {fetched_count - len(records)} source duplicates; details in publications.json > deduplication")
+    for path, contents in (
+        (OUTPUT_DIR / "publications.json", payload),
+        (OUTPUT_DIR / "counts.json", count_payload),
+    ):
+        temporary = path.with_suffix(path.suffix + ".tmp")
+        temporary.write_text(json.dumps(contents, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        os.replace(temporary, path)
+    print(f"ORCID groups: {audit['orcid_public_groups']}; underlying source versions: {audit['orcid_public_source_versions']}")
+    print(f"Displayed outputs: {len(records)}; skipped types: {audit['skipped_work_types']}")
+    print("Rebuilt publications.json and counts.json from current ORCID data.")
     return 0
 
 
